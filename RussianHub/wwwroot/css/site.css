@@ -16,3 +16,14 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.categoryMenu {
+
+    text-align:center;
+    border-bottom: 1px solid #f4792e;
+    border-top: 1px solid #f4792e;
+    margin: 0 auto;
+    width: 97%;
+    font-size: 15px;
+
+}
