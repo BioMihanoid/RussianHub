@@ -18,12 +18,14 @@ body {
 }
 
 .categoryMenu {
-
-    text-align:center;
     border-bottom: 1px solid #f4792e;
     border-top: 1px solid #f4792e;
     margin: 0 auto;
     width: 97%;
     font-size: 15px;
+    font-family: verdana,arial,times new roman;
+}
 
+ulCategory {
+    width: 16.666666666666668%;
 }
