@@ -24,8 +24,15 @@ body {
     width: 97%;
     font-size: 15px;
     font-family: verdana,arial,times new roman;
+    overflow: hidden;
+    display: block;
+    padding: 0;
 }
 
-ulCategory {
-    width: 16.666666666666668%;
+.ulCategory {
+    float: left;
+}
+
+div {
+    display: block;
 }
