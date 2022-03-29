@@ -23,10 +23,14 @@ body {
     margin: 0 auto;
     width: 97%;
     font-size: 15px;
-    font-family: verdana,arial,times new roman;
     overflow: hidden;
     display: block;
     padding: 0;
+}
+
+.navbar-brand
+{
+    color: #f4792e;
 }
 
 .ulCategory {
