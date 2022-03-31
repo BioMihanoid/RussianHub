@@ -1,42 +1,98 @@
-html {
-  font-size: 14px;
-}
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,400;1,500&display=swap');
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}
-
-.categoryMenu {
+  .Category {
+    display: flex;
     border-bottom: 1px solid #f4792e;
     border-top: 1px solid #f4792e;
-    margin: 0 auto;
-    width: 97%;
-    font-size: 15px;
-    overflow: hidden;
-    display: block;
-    padding: 0;
+    text-align: center;
+    padding-inline: 60px;
+    border-radius: 100px;
+  }
+  .Category>ul {
+    list-style: none;
+  }
+
+  .Category>ul>li {
+    border-bottom: 1px solid rgb(0, 0, 0);
+  
+  }
+  .horisont{ 
+    background-color:red;
+  }
+  
+  body {
+    
+    color: rgb(199, 190, 190);
+    background-color:rgb(0, 0, 0);
+    font: normal 16px 'Roboto';
+  }
+
+  .Top-menu {
+    color: red;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+
+  }
+  a:hover {
+    text-decoration:underline;
+  }
+   
+  a:active{
+    color: orange;
+    
+  }
+  h2 {
+    font-weight: normal;
+  }
+
+  h1 {
+    border:0px;
+    font-weight: normal;
+    margin: 0px;
+    border-bottom: 1px solid #f4792e;;
+  }
+
+  .left-menu {
+   padding-left: 30px;
+   padding-top:7px;
+  }
+.left-menu>a {
+  margin-left: 10px;
+}
+  .log >a{
+    margin-left: 10px;
+
+  }
+
+  .log{
+    padding-left: 375px;
+    padding-top:7px;
+  }
+  
+  .Menu {
+    margin:5px 5px;
+    margin-bottom: 0px;
+    display: flex;
+    padding-bottom: 10px;
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .home {
+    font-size: 25px;
+    color: orange
+  }
+
+.form {
+  padding-left: 20px;
+  padding-top: 7px;
+  
 }
 
-.navbar-brand
-{
-    color: #f4792e;
-}
-
-.ulCategory {
-    float: left;
-}
-
-div {
-    display: block;
+.form textarea{
+  width: 10;
 }
