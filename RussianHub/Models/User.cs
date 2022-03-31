@@ -9,8 +9,10 @@ public class User
     public Boolean StankinTeacher { get; set; }
     public PersonalParameters PersonalParameters { get; set; } = null!;
     public Rating SocialRating { get; set; } = null!;
-    public Comment[] Comments { get; set; } = null!;
-    //подписки пользователя (видосы + модели)
+    public List<Comment> Comments { get; set; } = null!;
     public DateTime TimeOnline { get; set; }
     public DateTime DateOfRegistration { get; set; }
+    public List<Model> Subscribtions { get; set; } = null!;
+    public Collection Collections { get; set; } = null!;
+    public Favourites Favourites { get; set; } = null!;
 }
