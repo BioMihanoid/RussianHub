@@ -17,4 +17,8 @@
     <PackageReference Include="NLog" Version="4.7.14" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\css\Новая папка\" />
+  </ItemGroup>
+
 </Project>
