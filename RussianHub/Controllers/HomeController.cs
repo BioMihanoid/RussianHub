@@ -33,6 +33,31 @@ namespace RussianHub.Controllers
 			return View();
 		}
 
+		public IActionResult Bookmarks()
+		{
+			return View();
+		}
+		
+		public IActionResult Models()
+		{
+			return View();
+		}
+		
+		public IActionResult Photos()
+		{
+			return View();
+		}
+		
+		public IActionResult Gifs()
+		{
+			return View();
+		}
+		
+		public IActionResult Blog()
+		{
+			return View();
+		}
+		
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()
 		{

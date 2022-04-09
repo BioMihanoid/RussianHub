@@ -1,4 +1,7 @@
+using Microsoft.EntityFrameworkCore;
 using NLog;
+using RussianHub.Models.Context;
+
 namespace RussianHub
 {
     class Program
@@ -22,6 +25,9 @@ namespace RussianHub
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<UserContext>(option => option.UseSqlServer(
+                builder.Configuration.GetConnectionString("DefaultConnection") ?? string.Empty
+                ));
 
             WebApplication app = builder.Build();
 

@@ -12,16 +12,17 @@
         <a class="home" asp-controller="Home" asp-action="Index"> RussianHub</a>
         <div class="left-menu">
             <a asp-controller="Home" asp-action="Index">Видео</a>
-            <a href="">Гифки</a>
-            <a href="">Модели</a>
-            <a href="">Блог</a>
+            <a asp-controller="Home" asp-action="Models">Модели</a>
+            <a asp-controller="Home" asp-action="Photos">Фото</a>
+            <a asp-controller="Home" asp-action="Gifs">Гифки</a>
+            <a asp-controller="Home" asp-action="Blog">Блог</a>
         </div>
         <form class="form">
             <input placeholder="Искать здесь"/>
             <button>Поиск</button>
         </form>
         <div class="log">  
-            <a href="">Закладки</a>
+            <a asp-controller="Home" asp-action="Bookmarks">Закладки</a>
             <a asp-controller="Home" asp-action="Login">Вход</a>
             <a asp-controller="Home" asp-action="Registration">Регистрация</a>
         </div>
