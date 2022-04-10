@@ -5,6 +5,18 @@ using RussianHub.Models.Content;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<UserContext>(options =>
+
+    options.UseSqlServer(builder.Configuration.GetConnectionString("UserContext")));
+
+builder.Services.AddDbContext<CommentContext>(options =>
+
+    options.UseSqlServer(builder.Configuration.GetConnectionString("CommentContext")));
+
+builder.Services.AddDbContext<PersonalParametersContext>(options =>
+
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PersonalParametersContext")));
+
 builder.Services.AddDbContext<PhotoContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PhotoContext")));
 

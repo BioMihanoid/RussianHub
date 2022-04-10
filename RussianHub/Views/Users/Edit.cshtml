@@ -1,0 +1,56 @@
+﻿@model RussianHub.Models.User
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Nickname" class="control-label"></label>
+                <input asp-for="Nickname" class="form-control" />
+                <span asp-validation-for="Nickname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="StankinTeacher" /> @Html.DisplayNameFor(model => model.StankinTeacher)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeOnline" class="control-label"></label>
+                <input asp-for="TimeOnline" class="form-control" />
+                <span asp-validation-for="TimeOnline" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfRegistration" class="control-label"></label>
+                <input asp-for="DateOfRegistration" class="form-control" />
+                <span asp-validation-for="DateOfRegistration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

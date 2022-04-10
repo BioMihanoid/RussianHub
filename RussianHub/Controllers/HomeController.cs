@@ -52,7 +52,12 @@ namespace RussianHub.Controllers
 		{
             return View(await _context.Photo.ToListAsync());
 		}
-		
+
+		public IActionResult Admin()
+		{
+			return View();
+		}
+
 		public IActionResult Gifs()
 		{
 			return View();
