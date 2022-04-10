@@ -3,6 +3,18 @@
     "mssql1": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:PhotoContext"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:PersonalParametersContext"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:CommentContext"
+    },
+    "mssql4": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:UserContext"
     }
   }
 }
