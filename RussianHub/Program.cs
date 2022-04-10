@@ -1,4 +1,10 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using RussianHub.Data;
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<PhotoContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PhotoContext")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
