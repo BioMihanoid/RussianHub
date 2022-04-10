@@ -71,6 +71,7 @@ a {
     padding-bottom: 10px;
     font-size: 17px;
     margin-bottom: 10px;
+    
 }
 
 .home {
@@ -83,9 +84,8 @@ a {
     padding-top: 7px;
 }
 
-
 .podval > div {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     padding: 10px;
     margin: 0 40%;

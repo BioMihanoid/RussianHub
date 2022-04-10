@@ -1,16 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using RussianHub.Data;
 using RussianHub.Models;
 using System.Diagnostics;
+using RussianHub.Models.Entity;
 
 namespace RussianHub.Controllers
 {
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
+		private readonly PhotoContext _context;
 
-		public HomeController(ILogger<HomeController> logger)
+		public HomeController(ILogger<HomeController> logger, PhotoContext context)
 		{
 			_logger = logger;
+			_context = context;
 		}
 
 		public IActionResult Index()
@@ -42,10 +47,10 @@ namespace RussianHub.Controllers
 		{
 			return View();
 		}
-		
-		public IActionResult Photos()
+
+		public async Task<IActionResult> Photos()
 		{
-			return View();
+            return View(await _context.Photo.ToListAsync());
 		}
 		
 		public IActionResult Gifs()
