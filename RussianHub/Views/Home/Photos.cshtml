@@ -1,24 +1,5 @@
-﻿@model IEnumerable<RussianHub.Models.Entity.Photo>
-
-@{
+﻿@{
     ViewData["Title"] = "Фото";
 }
 
 <h1>@ViewData["Title"]</h1>
-
-<div>
-    <ul>
-        @try
-        {
-            //доработать эту хуйню
-            @foreach (var item in Model)
-            {
-                <li><img src="@item.Url"/></li>
-            }
-        }
-        catch
-        {
-            <p>Error</p>
-        }
-    </ul>
-</div>

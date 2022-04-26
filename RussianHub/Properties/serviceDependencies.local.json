@@ -2,19 +2,10 @@
   "dependencies": {
     "mssql1": {
       "type": "mssql.local",
-      "connectionId": "ConnectionStrings:PhotoContext"
+      "connectionId": "ConnectionStrings:DefaultConnection"
     },
-    "mssql2": {
-      "type": "mssql.local",
-      "connectionId": "ConnectionStrings:PersonalParametersContext"
-    },
-    "mssql3": {
-      "type": "mssql.local",
-      "connectionId": "ConnectionStrings:CommentContext"
-    },
-    "mssql4": {
-      "type": "mssql.local",
-      "connectionId": "ConnectionStrings:UserContext"
+    "secrets1": {
+      "type": "secrets.user"
     }
   }
 }

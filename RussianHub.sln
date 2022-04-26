@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RussianHub", "RussianHub\RussianHub.csproj", "{327502CB-9104-4298-A937-A3337E1E073E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RussianHub", "RussianHub\RussianHub.csproj", "{F2BB04C6-F0B9-4D47-9F97-1F4A0B579CE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{327502CB-9104-4298-A937-A3337E1E073E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{327502CB-9104-4298-A937-A3337E1E073E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{327502CB-9104-4298-A937-A3337E1E073E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{327502CB-9104-4298-A937-A3337E1E073E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2BB04C6-F0B9-4D47-9F97-1F4A0B579CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2BB04C6-F0B9-4D47-9F97-1F4A0B579CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2BB04C6-F0B9-4D47-9F97-1F4A0B579CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2BB04C6-F0B9-4D47-9F97-1F4A0B579CE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

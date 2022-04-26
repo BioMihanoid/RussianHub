@@ -1,14 +1,17 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - RussianHub</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RussianHub.styles.css" asp-append-version="true" />
 </head>
 <body>
-
-    <div class="Menu">
+    <header >
+        <div class="Menu">
         <a class="home" asp-controller="Home" asp-action="Index"> RussianHub</a>
         <div class="left-menu">
             <a asp-controller="Home" asp-action="Index">Видео</a>
@@ -21,29 +24,25 @@
             <input placeholder="Искать здесь"/>
             <button>Поиск</button>
         </form>
-        <div class="log">  
-            <a asp-controller="Home" asp-action="Admin">Админ панель</a>
-            <a asp-controller="Home" asp-action="Bookmarks">Закладки</a>
-            <a asp-controller="Home" asp-action="Login">Вход</a>
-            <a asp-controller="Home" asp-action="Registration">Регистрация</a>
+        <div class="log">
+            <partial name="_LoginPartial" />
         </div>
     </div>
-        <header>
-        </header>
-         <div class="container">
+    </header>
+    <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-    <footer class="podval">
+
+    <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - RussianHub - <a asp-area="" asp-controller="Home" asp-action="Privacy">Приватность</a>
+            &copy; 2022 - RussianHub - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
- </body>
-
+</body>
 </html>

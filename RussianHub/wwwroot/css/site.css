@@ -7,13 +7,14 @@ for details on configuring this project to bundle and minify static web assets. 
     border-bottom: 1px solid #f4792e;
     border-top: 1px solid #f4792e;
     text-align: center;
-    padding-inline: 60px;
-    border-radius: 100px;
+    padding: 5px 60px 0px 60px ;
+    
     margin: auto;
 }
 
     .Category > ul {
         list-style: none;
+       
     }
 
         .Category > ul > li {
@@ -57,12 +58,18 @@ a {
 
 .log > a {
     margin-left: 10px;
+
+}
+.log > ul > li {
+    display: inline;
+    padding: 5px;
 }
 
 .log {
-    right: 0;
+    right: 10px;
     position: absolute;
     margin: 10px;
+    
 }
 
 .Menu {
