@@ -2,24 +2,55 @@
 for details on configuring this project to bundle and minify static web assets. */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,400;1,500&display=swap');
 
-.Category {
+.wrap__content {
     display: flex;
-    border-bottom: 1px solid #f4792e;
-    border-top: 1px solid #f4792e;
-    text-align: center;
-    padding: 5px 60px 0px 60px ;
     
-    margin: auto;
+}
+.content-container {
+    width: 90%;
+    padding: 10px 10px 10px 20px;
 }
 
-    .Category > ul {
-        list-style: none;
-       
+.content-item {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.video_block {
+    flex-basis: 30%;
+    padding: 10px;
+}
+
+    .video_block > a > img {
+        border-top: 2px solid #3b3939;
+        border-left: 2px solid #3b3939;
+        border-right: 2px solid #3b3939;
     }
 
-        .Category > ul > li {
-            border-bottom: 1px solid #273323;
-        }
+.video_block > a > p {
+    background-color: #222222;
+    padding-top: 2px;
+    border: 1px solid #3b3939;
+}
+.Category {
+    
+    text-align: left;
+    height: 100%;
+    width: 20%;
+    border-right: 1px solid orange;
+    padding-right: 5px;
+}
+
+.Category > ul {
+    list-style: none;
+    
+}
+
+.Category > ul > li {
+    padding-bottom: 3px;
+    width: 100%;
+}
 
 .horisont {
     background-color: red;
@@ -37,54 +68,54 @@ a {
     color: white;
 }
 
-    a:hover {
-        text-decoration: underline;
-        color: orange;
-    }
+a:hover {
+    
+    color: orange;
+}
 
-    a:active {
-        color: orange;
-    }
+a:active {
+    color: orange;
+}
 
 
 .left-menu {
-    padding-left: 30px;
-    padding-top: 7px;
 }
 
-    .left-menu > a {
-        margin-left: 10px;
-    }
+.left-menu > a {
+    margin-left: 10px;
+}
 
 .log > a {
     margin-left: 10px;
 
 }
-.log > ul > li {
+.log > div {
     display: inline;
     padding: 5px;
+   
 }
 
 .log {
-    right: 10px;
-    position: absolute;
-    margin: 10px;
-    
+    display: flex;
+    text-align:left;
 }
 
 .Menu {
-    margin: 5px 5px;
+   
     margin-bottom: 0px;
     display: flex;
+    align-items:center;
     padding-bottom: 10px;
     font-size: 17px;
     margin-bottom: 10px;
-    
+    padding-top:10px;
+    border-bottom: 1px solid #f4792e;
+    width: 100%;    
 }
 
 .home {
-    font-size: 25px;
-    color: orange;
+    height:100px;
+    width: 250px;
 }
 
 .form {
@@ -92,10 +123,18 @@ a {
     padding-top: 7px;
 }
 
+.left-menu-form {
+    display:flex;
+    position: relative;
+    left: 50px;
+}
 .podval > div {
-    position: fixed;
-    bottom: 0;
+    
     padding: 10px;
     margin: 0 40%;
     width: 50%;
+}
+
+div.h5 {
+    text-align: center;
 }

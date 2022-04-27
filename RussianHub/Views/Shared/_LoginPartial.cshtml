@@ -4,28 +4,28 @@
 
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
-<ul>
+<div class="log">
  
 @if (SignInManager.IsSignedIn(User))
 {
-    <li><a asp-controller="Home" asp-action="Admin">Админ панель</a></li>
-    <li><a asp-controller="Home" asp-action="Bookmarks">Закладки</a></li>
-    <li>
+    <div><a asp-controller="Home" asp-action="Admin">Админ панель</a></div>
+    <div><a asp-controller="Home" asp-action="Bookmarks">Закладки</a></div>
+    <div>
         <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity?.Name!</a>
-    </li>
-    <li>
+    </div>
+    <div>
         <a  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
             Выход
         </a>
-    </li>
+    </div>
 }
 else
 {
-    <li>
+    <div>
         <a asp-area="Identity" asp-page="/Account/Register">Регистрация</a>
-    </li>
-    <li>
+    </div>
+    <div>
         <a asp-area="Identity" asp-page="/Account/Login">Вход</a>
-    </li>
+    </div>
 }
-</ul>
+</div>

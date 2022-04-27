@@ -12,31 +12,33 @@
 <body>
     <header >
         <div class="Menu">
-        <a class="home" asp-controller="Home" asp-action="Index"> RussianHub</a>
-        <div class="left-menu">
-            <a asp-controller="Home" asp-action="Index">Видео</a>
-            <a asp-controller="Home" asp-action="Models">Модели</a>
-            <a asp-controller="Home" asp-action="Photos">Фото</a>
-            <a asp-controller="Home" asp-action="Gifs">Гифки</a>
-            <a asp-controller="Home" asp-action="Blog">Блог</a>
-        </div>
-        <form class="form">
-            <input placeholder="Искать здесь"/>
-            <button>Поиск</button>
-        </form>
-        <div class="log">
-            <partial name="_LoginPartial" />
-        </div>
-    </div>
+            <div class="home">
+                <a class="" asp-controller="Home" asp-action="Index"> <img src="Img/RH-logo.jpg" height="100px" width="250px" /> </a>
+            </div>
+            <div class="left-menu">
+                <a asp-controller="Home" asp-action="Index">Видео</a>
+                <a asp-controller="Home" asp-action="Models">Модели</a>
+                <a asp-controller="Home" asp-action="Photos">Фото</a>
+                <a asp-controller="Home" asp-action="Gifs">Гифки</a>
+                <a asp-controller="Home" asp-action="Blog">Блог</a>
+            </div>
+            <form class="form">
+                <input placeholder="Искать здесь"/>
+                <button>Поиск</button>
+            </form>
+            <div class="log">
+                <partial name="_LoginPartial" />
+            </div>
+          </div>
     </header>
-    <div class="container">
+    <div class="">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container" align="center">
+    <footer class="">
+        <div align="center">
             <a asp-area="" asp-controller="Home" asp-action="Privacy">Конфиденциальность</a>
            <a asp-area="" asp-controller="Home" asp-action="TermsOfUse">Условия использования</a>
            &copy; 2022 - RussianHub
