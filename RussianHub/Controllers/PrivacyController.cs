@@ -10,24 +10,4 @@ public class PrivacyController : Controller
     {
         _logger = logger;
     }
-    
-    public IActionResult Info()
-    {
-        return View();
-    }
-    
-    public IActionResult Contacts()
-    {
-        return View();
-    }
-
-    public IActionResult Abuse()
-    {
-        return View();
-    }
-
-    public IActionResult Advertisement()
-    {
-        return View();
-    }
 }
