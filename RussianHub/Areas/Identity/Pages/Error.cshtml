@@ -4,20 +4,22 @@
     ViewData["Title"] = "Error";
 }
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h1 class="text-danger">Ошибка.</h1>
+<h2 class="text-danger">При обработке вашего запроса произошла ошибка.</h2>
 
 @if (Model.ShowRequestId)
 {
     <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        <strong>Идентификатор запроса:</strong> <code>@Model.RequestId</code>
     </p>
 }
 
-<h3>Development Mode</h3>
+<h3>Режим Разработки</h3>
 <p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+    При переключении на <strong>Среду разработки </strong> будет отображена более подробная информация о возникшей ошибке.
 </p>
 <p>
-    <strong>Development environment should not be enabled in deployed applications</strong>, as it can result in sensitive information from exceptions being displayed to end users. For local debugging, development environment can be enabled by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>, and restarting the application.
+    <strong>Среда разработки не должна быть включена в развернутых приложениях</strong>, так как это может привести к отображению
+    конфиденциальной информации из исключений конечным пользователям. Для локальной отладки среду разработки можно включить, установив 
+    для переменной среды <strong>ASPNETCORE_ENVIRONMENT</strong> переменнаую среду to <strong>Development</strong>, и перезапустив приложение.
 </p>
