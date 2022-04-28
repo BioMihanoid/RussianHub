@@ -22,7 +22,12 @@ builder.Services.AddAuthentication()
         config.GetSection("Authentication:Google");
         options.ClientId = "300502537276-j7vrh5m39t5ni9a948m7qrvc8m4pk6vu.apps.googleusercontent.com";
         options.ClientSecret = "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";
-    });
+    })
+    .AddMicrosoftAccount(microsoftOptions =>
+    {
+        microsoftOptions.ClientId = "88e303fd-6e9d-4029-8b3b-ec15ef6301c7";
+        microsoftOptions.ClientSecret = "e973778c-c920-4fb4-ba16-2a81c988c60b";
+    }); ;
 
 var app = builder.Build();
 

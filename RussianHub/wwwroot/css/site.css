@@ -18,14 +18,12 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .video_block {
-    flex-basis: 30%;
+    flex-basis: 33%;
     padding: 10px;
 }
 
     .video_block > a > img {
-        border-top: 2px solid #3b3939;
-        border-left: 2px solid #3b3939;
-        border-right: 2px solid #3b3939;
+       
     }
 
 .video_block > a > p {
