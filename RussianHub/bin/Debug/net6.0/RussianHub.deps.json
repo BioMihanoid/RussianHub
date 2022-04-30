@@ -9,6 +9,7 @@
       "RussianHub/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Google": "6.0.4",
+          "Microsoft.AspNetCore.Authentication.MicrosoftAccount": "6.0.4",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.4",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.4",
           "Microsoft.AspNetCore.Identity.UI": "6.0.4",
@@ -58,6 +59,14 @@
       "Microsoft.AspNetCore.Authentication.Google/6.0.4": {
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "6.0.4.0",
+            "fileVersion": "6.0.422.17204"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.MicrosoftAccount/6.0.4": {
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll": {
             "assemblyVersion": "6.0.4.0",
             "fileVersion": "6.0.422.17204"
           }
@@ -2403,6 +2412,13 @@
       "sha512": "sha512-MKF4gKsY3V7PwdEVp0PUp5qSA1Fl+jt9PPBWEgID5mdngIHp/EIFFm2iGHRWkw88KJEN5I248CDeppRxT8wDIg==",
       "path": "microsoft.aspnetcore.authentication.google/6.0.4",
       "hashPath": "microsoft.aspnetcore.authentication.google.6.0.4.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.MicrosoftAccount/6.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-llWm9XJJ98rvN3Asyp5m77ix5lCc3/P21jjJ5mJvyLm+ZT0qdHsQdqjyL7/e7gRr+Pi6B/1ygNwBFWnLKTrs+A==",
+      "path": "microsoft.aspnetcore.authentication.microsoftaccount/6.0.4",
+      "hashPath": "microsoft.aspnetcore.authentication.microsoftaccount.6.0.4.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/6.0.4": {
       "type": "package",
