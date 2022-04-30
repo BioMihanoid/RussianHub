@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\RussianHub",
+    "\\RussianHub\\wwwroot",
+    "\\RussianHub\\wwwroot\\css"
   ],
-  "SelectedNode": "\\RussianHub.sln",
+  "SelectedNode": "\\RussianHub\\RussianHub.csproj",
   "PreviewInSolutionExplorer": false
 }
