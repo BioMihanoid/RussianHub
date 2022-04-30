@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C# project\\BioMihanoid\\RussianHub\\RussianHub\\RussianHub.csproj": {}
+    "C:\\Users\\Андрей\\Desktop\\RH\\RussianHub\\RussianHub.csproj": {}
   },
   "projects": {
-    "D:\\C# project\\BioMihanoid\\RussianHub\\RussianHub\\RussianHub.csproj": {
+    "C:\\Users\\Андрей\\Desktop\\RH\\RussianHub\\RussianHub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C# project\\BioMihanoid\\RussianHub\\RussianHub\\RussianHub.csproj",
+        "projectUniqueName": "C:\\Users\\Андрей\\Desktop\\RH\\RussianHub\\RussianHub.csproj",
         "projectName": "RussianHub",
-        "projectPath": "D:\\C# project\\BioMihanoid\\RussianHub\\RussianHub\\RussianHub.csproj",
-        "packagesPath": "C:\\Users\\pechn\\.nuget\\packages\\",
-        "outputPath": "D:\\C# project\\BioMihanoid\\RussianHub\\RussianHub\\obj\\",
+        "projectPath": "C:\\Users\\Андрей\\Desktop\\RH\\RussianHub\\RussianHub.csproj",
+        "packagesPath": "C:\\Users\\Андрей\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Андрей\\Desktop\\RH\\RussianHub\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\pechn\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Андрей\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,6 +75,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.3.0, )"
+            },
+            "VkNet": {
+              "target": "Package",
+              "version": "[1.69.0, )"
             }
           },
           "imports": [
@@ -99,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "HtmlAgilityPack/1.11.42": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -1242,7 +1251,7 @@
           "lib/netstandard2.1/Microsoft.Extensions.Logging.dll": {}
         }
       },
-      "Microsoft.Extensions.Logging.Abstractions/6.0.0": {
+      "Microsoft.Extensions.Logging.Abstractions/6.0.1": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
@@ -3095,19 +3104,22 @@
           "ref/netstandard1.3/System.Text.Encoding.dll": {}
         }
       },
-      "System.Text.Encoding.CodePages/4.7.0": {
+      "System.Text.Encoding.CodePages/6.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.0"
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
+          "lib/net6.0/System.Text.Encoding.CodePages.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
+          "lib/net6.0/System.Text.Encoding.CodePages.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll": {
+          "runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -3265,10 +3277,74 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "VkNet/1.69.0": {
+        "type": "package",
+        "dependencies": {
+          "HtmlAgilityPack": "1.11.42",
+          "Microsoft.Extensions.DependencyInjection": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Text.Encoding.CodePages": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/VkNet.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/VkNet.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "HtmlAgilityPack/1.11.42": {
+      "sha512": "LDc1bEfF14EY2DZzak4xvzWvbpNXK3vi1u0KQbBpLUN4+cx/VrvXhgCAMSJhSU5vz0oMfW9JZIR20vj/PkDHPA==",
+      "type": "package",
+      "path": "htmlagilitypack/1.11.42",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "htmlagilitypack.1.11.42.nupkg.sha512",
+        "htmlagilitypack.nuspec",
+        "lib/Net35/HtmlAgilityPack.dll",
+        "lib/Net35/HtmlAgilityPack.pdb",
+        "lib/Net35/HtmlAgilityPack.xml",
+        "lib/Net40-client/HtmlAgilityPack.dll",
+        "lib/Net40-client/HtmlAgilityPack.pdb",
+        "lib/Net40-client/HtmlAgilityPack.xml",
+        "lib/Net40/HtmlAgilityPack.XML",
+        "lib/Net40/HtmlAgilityPack.dll",
+        "lib/Net40/HtmlAgilityPack.pdb",
+        "lib/Net45/HtmlAgilityPack.XML",
+        "lib/Net45/HtmlAgilityPack.dll",
+        "lib/Net45/HtmlAgilityPack.pdb",
+        "lib/NetCore45/HtmlAgilityPack.XML",
+        "lib/NetCore45/HtmlAgilityPack.dll",
+        "lib/NetCore45/HtmlAgilityPack.pdb",
+        "lib/netstandard1.3/HtmlAgilityPack.deps.json",
+        "lib/netstandard1.3/HtmlAgilityPack.dll",
+        "lib/netstandard1.3/HtmlAgilityPack.pdb",
+        "lib/netstandard1.3/HtmlAgilityPack.xml",
+        "lib/netstandard1.6/HtmlAgilityPack.deps.json",
+        "lib/netstandard1.6/HtmlAgilityPack.dll",
+        "lib/netstandard1.6/HtmlAgilityPack.pdb",
+        "lib/netstandard1.6/HtmlAgilityPack.xml",
+        "lib/netstandard2.0/HtmlAgilityPack.deps.json",
+        "lib/netstandard2.0/HtmlAgilityPack.dll",
+        "lib/netstandard2.0/HtmlAgilityPack.pdb",
+        "lib/netstandard2.0/HtmlAgilityPack.xml",
+        "lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.XML",
+        "lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.dll",
+        "lib/portable-net45+netcore45+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.pdb",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.XML",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch/HtmlAgilityPack.pdb",
+        "lib/uap10.0/HtmlAgilityPack.XML",
+        "lib/uap10.0/HtmlAgilityPack.dll",
+        "lib/uap10.0/HtmlAgilityPack.pdb",
+        "lib/uap10.0/HtmlAgilityPack.pri"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -4853,10 +4929,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Logging.Abstractions/6.0.0": {
-      "sha512": "/HggWBbTwy8TgebGSX5DBZ24ndhzi93sHUBDvP1IxbZD7FDokYzdAr6+vbWGjw2XAfR2EJ1sfKUotpjHnFWPxA==",
+    "Microsoft.Extensions.Logging.Abstractions/6.0.1": {
+      "sha512": "dzB2Cgg+JmrouhjkcQGzSFjjvpwlq353i8oBQO2GWNjCXSzhbtBRUf28HSauWe7eib3wYOdb3tItdjRwAdwCSg==",
       "type": "package",
-      "path": "microsoft.extensions.logging.abstractions/6.0.0",
+      "path": "microsoft.extensions.logging.abstractions/6.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4900,7 +4976,7 @@
         "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
-        "microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.6.0.1.nupkg.sha512",
         "microsoft.extensions.logging.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -9468,44 +9544,43 @@
         "system.text.encoding.nuspec"
       ]
     },
-    "System.Text.Encoding.CodePages/4.7.0": {
-      "sha512": "aeu4FlaUTemuT1qOd1MyU4T516QR4Fy+9yDbwWMPHOHy7U8FD6SgTzdZFO7gHcfAPHtECqInbwklVvUK4RHcNg==",
+    "System.Text.Encoding.CodePages/6.0.0": {
+      "sha512": "ZFCILZuOvtKPauZ/j/swhvw68ZRi9ATCfvGbk1QfydmcXBkIWecWKn/250UH7rahZ5OoDBaiAudJtPvLwzw85A==",
       "type": "package",
-      "path": "system.text.encoding.codepages/4.7.0",
+      "path": "system.text.encoding.codepages/6.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Text.Encoding.CodePages.targets",
+        "buildTransitive/netcoreapp3.1/_._",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
-        "lib/net46/System.Text.Encoding.CodePages.dll",
         "lib/net461/System.Text.Encoding.CodePages.dll",
         "lib/net461/System.Text.Encoding.CodePages.xml",
-        "lib/netstandard1.3/System.Text.Encoding.CodePages.dll",
+        "lib/net6.0/System.Text.Encoding.CodePages.dll",
+        "lib/net6.0/System.Text.Encoding.CodePages.xml",
+        "lib/netcoreapp3.1/System.Text.Encoding.CodePages.dll",
+        "lib/netcoreapp3.1/System.Text.Encoding.CodePages.xml",
         "lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
         "lib/netstandard2.0/System.Text.Encoding.CodePages.xml",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
         "runtimes/win/lib/net461/System.Text.Encoding.CodePages.dll",
         "runtimes/win/lib/net461/System.Text.Encoding.CodePages.xml",
-        "runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll",
-        "runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.xml",
-        "runtimes/win/lib/netstandard1.3/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/net6.0/System.Text.Encoding.CodePages.xml",
+        "runtimes/win/lib/netcoreapp3.1/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/netcoreapp3.1/System.Text.Encoding.CodePages.xml",
         "runtimes/win/lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
         "runtimes/win/lib/netstandard2.0/System.Text.Encoding.CodePages.xml",
-        "system.text.encoding.codepages.4.7.0.nupkg.sha512",
+        "system.text.encoding.codepages.6.0.0.nupkg.sha512",
         "system.text.encoding.codepages.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "useSharedDesignerContext.txt"
       ]
     },
     "System.Text.Encoding.Extensions/4.3.0": {
@@ -10098,6 +10173,25 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "VkNet/1.69.0": {
+      "sha512": "L7JjHLOSEfTvtuhOIz1Djr8i0dZ+eiuHArGDk/DM8qJ9/7ZsY1f6BS4zrBhIjdsWH9SmcvvqmwejHuAKH9/1jw==",
+      "type": "package",
+      "path": "vknet/1.69.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENCE",
+        "lib/net5.0/VkNet.dll",
+        "lib/net5.0/VkNet.xml",
+        "lib/net6.0/VkNet.dll",
+        "lib/net6.0/VkNet.xml",
+        "lib/netstandard2.0/VkNet.dll",
+        "lib/netstandard2.0/VkNet.xml",
+        "vknet-icon.PNG",
+        "vknet.1.69.0.nupkg.sha512",
+        "vknet.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -10110,28 +10204,24 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.4",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.4",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.3",
-      "Swashbuckle.AspNetCore >= 6.3.0"
+      "Swashbuckle.AspNetCore >= 6.3.0",
+      "VkNet >= 1.69.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pechn\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Андрей\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C# project\\BioMihanoid\\RussianHub\\RussianHub\\RussianHub.csproj",
+      "projectUniqueName": "C:\\Users\\Андрей\\Desktop\\RH\\RussianHub\\RussianHub.csproj",
       "projectName": "RussianHub",
-      "projectPath": "D:\\C# project\\BioMihanoid\\RussianHub\\RussianHub\\RussianHub.csproj",
-      "packagesPath": "C:\\Users\\pechn\\.nuget\\packages\\",
-      "outputPath": "D:\\C# project\\BioMihanoid\\RussianHub\\RussianHub\\obj\\",
+      "projectPath": "C:\\Users\\Андрей\\Desktop\\RH\\RussianHub\\RussianHub.csproj",
+      "packagesPath": "C:\\Users\\Андрей\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Андрей\\Desktop\\RH\\RussianHub\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\pechn\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Андрей\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10192,6 +10282,10 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.3.0, )"
+          },
+          "VkNet": {
+            "target": "Package",
+            "version": "[1.69.0, )"
           }
         },
         "imports": [
@@ -10212,7 +10306,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
