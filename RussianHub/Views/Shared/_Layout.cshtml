@@ -10,26 +10,47 @@
     <link rel="stylesheet" href="~/RussianHub.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header >
-        <div class="Menu">
+    <header>
+        <div class="Navbar">
             <div class="home">
                 <a class="" asp-controller="Home" asp-action="Index"> <img src="Img/RH-logo.jpg" height="100px" width="250px" /> </a>
             </div>
-            <div class="left-menu">
-                <a asp-controller="Home" asp-action="Index">Видео</a>
-                <a asp-controller="Home" asp-action="Models">Модели</a>
-                <a asp-controller="Home" asp-action="Photos">Фото</a>
-                <a asp-controller="Home" asp-action="Gifs">Гифки</a>
-                <a asp-controller="Home" asp-action="Blog">Блог</a>
+            <div class="Navbar-nav">
+                <div class="Navbar-nav-top_menu">
+                    <div>
+                        <a asp-controller="Home" asp-action="Index">Видео</a>
+                    </div>
+                    <div>
+                        <a asp-controller="Home" asp-action="Models">Модели</a>
+                    </div>
+                    <div>
+                        <a asp-controller="Home" asp-action="Photos">Фото</a>
+                    </div>
+                    <div>
+                        <a asp-controller="Home" asp-action="Gifs">Гифки</a>
+                    </div>
+                    <div>
+                        <a asp-controller="Home" asp-action="Blog">Блог</a>
+                    </div>
+                </div>
+                
+                <form class="form">
+                    <div class="text_area">
+                        <input placeholder="Искать здесь" />
+                    </div>
+                    <div class="search">
+                        <button>
+                            <img src="/Img/search3.png" width="32px" height="32px"/>
+                            </button>
+                    </div>
+                </form>
+
+                <div class="log">
+                    <partial name="_LoginPartial" />
+                </div>
             </div>
-            <form class="form">
-                <input placeholder="Искать здесь"/>
-                <button>Поиск</button>
-            </form>
-            <div class="log">
-                <partial name="_LoginPartial" />
-            </div>
-          </div>
+
+        </div>
     </header>
     <div class="">
         <main role="main" class="pb-3">
@@ -40,8 +61,8 @@
     <footer class="">
         <div align="center">
             <a asp-area="" asp-controller="Home" asp-action="Privacy">Конфиденциальность</a>
-           <a asp-area="" asp-controller="Home" asp-action="TermsOfUse">Условия использования</a>
-           &copy; 2022 - RussianHub
+            <a asp-area="" asp-controller="Home" asp-action="TermsOfUse">Условия использования</a>
+            &copy; 2022 - RussianHub
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
