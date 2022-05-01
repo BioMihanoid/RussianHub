@@ -62,7 +62,29 @@ a, a:visited {
     a:hover {
         text-decoration: none;
     }
+.text-area {
+   
+}
 
+.form {
+    display: flex;
+    align-items: center;
+    border: 1px solid #4b4b4b;
+}
+    .text_area > input {
+        background-color: #242424;
+        padding: 5px 0 5px 10px;
+    }
+.text_area > input {
+    
+
+}
+
+.search > button {
+    background-color: #242424;
+    padding-right: 10px;
+    
+}
 ul li {
     list-style: none;
 }
@@ -95,25 +117,42 @@ h1, h2, h3, h4, h5, h6 {
 
 .content-item {
     display: flex;
-    width: 100%;
     flex-wrap: wrap;
 }
 
+    .content-item > p {
+        margin-bottom: 30px;
+    }
+
 .video_block {
     flex-basis: 25%;
-    padding: 10px;
+    padding: 0px 10px 15px 0px;
+    margin-bottom: 30px;
+    width: 30%;
 }
 
-    .video_block > a > img {
-        width: 100%;
-        height: 100%;
-    }
+.content-container > content-item > photo_block {
+    width: 100px;
+    height: 100px;
+}
 
-    .video_block > a > p {
-        background-color: #222222;
-        padding-top: 2px;
-        border: 1px solid #3b3939;
-    }
+.photo_block {
+    width: 23%;
+    padding: 0px 10px 15px 0px;
+    max-height: 389px;
+    flex-basis: 25%;
+}
+
+.video_block > a > img {
+    width: 100%;
+    height: 100%;
+}
+
+.video_block > a > p {
+    background-color: #222222;
+    padding-top: 2px;
+    border: 1px solid #3b3939;
+}
 
 .Category {
     text-align: left;
@@ -157,11 +196,12 @@ a {
     }
 
 
-.left-menu {
+.Navbar-nav {
+    display: flex;
 }
 
-    .left-menu > a {
-        margin-left: 10px;
+    .Navbar-nav > div {
+        margin-left: 40px;
     }
 
 .log > a {
@@ -169,16 +209,15 @@ a {
 }
 
 .log > div {
-    display: inline;
-    padding: 5px;
 }
 
 .log {
-    display: flex;
-    text-align: left;
+    top: 0px;
+    right: 0px;
+    align-items: center;
 }
 
-.Menu {
+.Navbar {
     margin-bottom: 0px;
     display: flex;
     align-items: center;
@@ -190,19 +229,29 @@ a {
     width: 100%;
 }
 
+.Navbar-nav {
+    align-items: center;
+}
+
+.Navbar-nav-top_menu {
+    display: flex;
+}
+
+    .Navbar-nav-top_menu > div {
+        margin-right: 35px;
+    }
+
 .home {
     height: 100px;
     width: 250px;
 }
 
 .form {
-    padding-left: 20px;
-    padding-top: 7px;
+    display: flex;
 }
 
 .left-menu-form {
     display: flex;
-    position: relative;
     left: 50px;
 }
 
@@ -236,8 +285,13 @@ div.h5 {
 .video-data {
     background-color: #222222;
     border-bottom: 1px solid #464646;
-    padding: 5px 0 0 7px;
+    position: relative;
+    align-items: center;
 }
+
+    .video-data > div {
+        padding: 10px;
+    }
 
 .additional-container {
     width: 96%;
@@ -245,20 +299,175 @@ div.h5 {
 
 .video-additions {
     background-color: #222222;
-    padding: 10px 0 5px 10px;
+    padding: 10px;
+    position: relative;
 }
+
 
 .video-comments {
     margin-top: 10px;
     background-color: #222222;
-    padding: 5px 0 0 7px;
+    padding: 10px;
 }
 
 .other-video {
-    background-color: #222222;
     margin-top: 60px;
 }
 
 #my_video_1:hover {
     cursor: pointer;
+}
+
+.similar_video {
+    margin: 10px auto;
+    text-align: center;
+    width: 10%;
+    background-color: #3b3939;
+    border-radius: 45%;
+    padding: 10px;
+}
+
+
+.video_favs {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    align-items: center;
+}
+
+.add_favorite {
+    float: left;
+}
+
+.video_likes {
+    float: left;
+    margin: 2px 5px 0 0;
+}
+
+.grade {
+    top: 0px;
+    right: 0px;
+    display: flex;
+    background-color: #1a1a1a;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    color: orange;
+    position: absolute;
+}
+
+.hr_line {
+    height: 2px;
+}
+
+.percent {
+    border-bottom: 1px solid orange;
+    text-align: center;
+}
+
+.grade > img {
+    padding-top: 15px;
+}
+
+.rating_score {
+    padding: 5px;
+}
+
+.views {
+    background-color: #1a1a1a;
+}
+
+.download {
+    background-color: #1a1a1a;
+    height: 80%;
+}
+
+.kek {
+    display: flex;
+    align-items: center;
+}
+
+    .kek > div {
+        margin-right: 10px;
+        background-color: #1a1a1a;
+        padding: 10px;
+        border-radius: 20px;
+        color: orange;
+    }
+
+.user {
+    border: 1px solid #3b3939;
+}
+
+.comment {
+    display: flex;
+   
+}
+
+.comment_down {
+    display: flex;
+}
+
+.comment_rate {
+    display: flex;
+}
+
+.comment-message {
+    background-color: #464646;
+    height: 50%;
+    padding: 10px 10px 40px 10px;
+    margin-top: 15px;
+    position: relative;
+}
+.comment-user {
+    background-color: #171717;
+    margin: 15px 15px 15px 0;
+    border: 1px solid #3b3939;
+    padding: 20px;
+    padding-top: 5px;
+   
+    
+}
+comment-user_photo {
+    margin: 0 auto;
+}
+
+.comment_style {
+    border: 1px solid #6b6b6b;
+    border-radius: 10px;
+}
+.comment-user_name {
+    color: orange;
+    padding: 5px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.comment_down {
+    position: absolute;
+    padding: 5px 10px 5px 5px;
+    right: 0px;
+    bottom: 0px;
+
+}
+
+.comment_down div {
+    margin-left: 8px;
+}
+
+.input_submit {
+    background-color: #d46c00;
+    padding: 5px 40px;
+    border-radius: 5px;
+}
+
+.input {
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.comment_area {
+    border-radius: 4px;
+    padding: 5px 88px;
+    margin-bottom: 5px;
 }
