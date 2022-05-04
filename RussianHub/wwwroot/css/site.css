@@ -3,6 +3,10 @@ for details on configuring this project to bundle and minify static web assets. 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,400;1,500&display=swap');
 
 
+
+
+
+/*Обнуление*/
 * {
     padding: 0;
     margin: 0;
@@ -62,8 +66,51 @@ a, a:visited {
     a:hover {
         text-decoration: none;
     }
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+/*--------------------*/
+
+body {
+    background: red;
+}
+
+input, button, textarea {
+    font-family: inherit;
+}
+
+    input::-ms-clear {
+        display: none;
+    }
+
+button {
+    cursor: pointer;
+}
+
+    button::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+
+a, a:visited {
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: none;
+    }
+
 .text-area {
-   
 }
 
 .form {
@@ -71,20 +118,20 @@ a, a:visited {
     align-items: center;
     border: 1px solid #4b4b4b;
 }
-    .text_area > input {
-        background-color: #242424;
-        padding: 5px 0 5px 10px;
-    }
-.text_area > input {
-    
 
+.text_area > input {
+    background-color: #242424;
+    padding: 5px 0 5px 10px;
+}
+
+.text_area > input {
 }
 
 .search > button {
     background-color: #242424;
     padding-right: 10px;
-    
 }
+
 ul li {
     list-style: none;
 }
@@ -110,14 +157,20 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
 }
 
+    .wrap__content > div {
+        padding-top: 10px;
+    }
+
 .content-container {
     width: 90%;
     padding: 10px 10px 10px 20px;
+    border-left: 1px solid orange;
 }
 
 .content-item {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
     .content-item > p {
@@ -125,55 +178,108 @@ h1, h2, h3, h4, h5, h6 {
     }
 
 .video_block {
-    flex-basis: 25%;
-    padding: 0px 10px 15px 0px;
-    margin-bottom: 30px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    position: relative;
     width: 30%;
+    min-width: 260px;
 }
+.video_img { /*ХЗ*/
+        object-fit: contain;
+        object-position: center;
+        width: 100%;    
+}
+
+.about_video {
+    background-color: #222222;
+    padding: 2px 0 0 5px;
+    border: 1px solid #3b3939;
+    width: 100%; /*хардкод*/
+    overflow: auto;
+    height: 25px;
+}
+
+.photo_block {
+    width: 24%;
+    margin: 0px 10px 15px 0px;
+    min-width: 200px;
+}
+
+.photo_block img {
+    width: 100%;
+    height:100%;
+    object-fit:cover;
+    object-position: center;
+}
+
+.right_bot_mini_block {
+    display: flex;
+    position: absolute;
+    bottom: 30px;
+    left: 5px;
+    background-color: #252525;
+    opacity: 0.8;
+    align-items: center;
+    padding-right: 5px;
+}
+
+.right_top_mini_block {
+    background-color: #252525;
+    opacity: 0.8;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding-right: 5px;
+}
+
+
+.video_duration {
+    align-items: center;
+    position: absolute;
+    right: 5px;
+    bottom: 30px;
+    padding: 4px;
+    background-color: #252525;
+    opacity: 0.8;
+}
+
+.video_fav_add {
+    background-color: #252525;
+    opacity: 0.8;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+    .video_fav_add:hover {
+        background-color: #fe209f;
+        cursor: pointer;
+    }
 
 .content-container > content-item > photo_block {
     width: 100px;
     height: 100px;
 }
 
-.photo_block {
-    width: 23%;
-    padding: 0px 10px 15px 0px;
-    max-height: 389px;
-    flex-basis: 25%;
-}
 
-.video_block > a > img {
-    width: 100%;
-    height: 100%;
-}
 
-.video_block > a > p {
-    background-color: #222222;
-    padding-top: 2px;
-    border: 1px solid #3b3939;
-}
+
 
 .Category {
     text-align: left;
     height: 100%;
-    width: 20%;
-    border-right: 1px solid orange;
     padding-right: 5px;
 }
 
-    .Category > ul {
-        list-style: none;
+    .Category > ul > li {
+        padding-bottom: 3px;
     }
 
-        .Category > ul > li {
-            padding-bottom: 3px;
-            width: 100%;
-        }
+    .Category > ul {
+        padding-left: 15px;
+    }
 
-.horisont {
-    background-color: red;
-}
 
 body {
     color: rgb(199, 190, 190);
@@ -223,10 +329,12 @@ a {
     align-items: center;
     padding-bottom: 10px;
     font-size: 17px;
-    margin-bottom: 10px;
     padding-top: 10px;
     border-bottom: 1px solid #f4792e;
-    width: 100%;
+}
+
+
+.log {
 }
 
 .Navbar-nav {
@@ -235,6 +343,7 @@ a {
 
 .Navbar-nav-top_menu {
     display: flex;
+    flex-wrap: wrap;
 }
 
     .Navbar-nav-top_menu > div {
@@ -242,12 +351,17 @@ a {
     }
 
 .home {
-    height: 100px;
-    width: 250px;
+    width: 20%;
+    min-width: 250px;
 }
 
+
+    .home img {
+        width: 100%;
+    }
+
 .form {
-    display: flex;
+    display: flex
 }
 
 .left-menu-form {
@@ -278,7 +392,7 @@ div.h5 {
 
 .video-block {
     max-width: 980px;
-    margin: 0 auto;
+    margin: 0px auto;
 }
 
 
@@ -289,9 +403,13 @@ div.h5 {
     align-items: center;
 }
 
-    .video-data > div {
-        padding: 10px;
-    }
+.description {
+    max-width: 90%;
+}
+
+.video-data > div {
+    padding: 10px;
+}
 
 .additional-container {
     width: 96%;
@@ -321,9 +439,10 @@ div.h5 {
 .similar_video {
     margin: 10px auto;
     text-align: center;
-    width: 10%;
+    width: 12%;
+    min-width: 100px;
     background-color: #3b3939;
-    border-radius: 45%;
+    border-radius: 30px;
     padding: 10px;
 }
 
@@ -401,7 +520,6 @@ div.h5 {
 
 .comment {
     display: flex;
-   
 }
 
 .comment_down {
@@ -419,15 +537,15 @@ div.h5 {
     margin-top: 15px;
     position: relative;
 }
+
 .comment-user {
     background-color: #171717;
     margin: 15px 15px 15px 0;
     border: 1px solid #3b3939;
     padding: 20px;
     padding-top: 5px;
-   
-    
 }
+
 comment-user_photo {
     margin: 0 auto;
 }
@@ -436,6 +554,7 @@ comment-user_photo {
     border: 1px solid #6b6b6b;
     border-radius: 10px;
 }
+
 .comment-user_name {
     color: orange;
     padding: 5px;
@@ -448,12 +567,11 @@ comment-user_photo {
     padding: 5px 10px 5px 5px;
     right: 0px;
     bottom: 0px;
-
 }
 
-.comment_down div {
-    margin-left: 8px;
-}
+    .comment_down div {
+        margin-left: 8px;
+    }
 
 .input_submit {
     background-color: #d46c00;
@@ -468,6 +586,10 @@ comment-user_photo {
 
 .comment_area {
     border-radius: 4px;
-    padding: 5px 88px;
+    padding: 5px;
     margin-bottom: 5px;
+    width: 355px;
+}
+
+.video_form {
 }
