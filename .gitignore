@@ -1,0 +1,5 @@
+.idea
+.vs
+.vscode
+/RussianHub/obj/*
+/RussianHub/bin/*
