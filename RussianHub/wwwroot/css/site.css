@@ -162,39 +162,59 @@ h1, h2, h3, h4, h5, h6 {
     }
 
 .content-container {
-    width: 90%;
+    width: 100%;
     padding: 10px 10px 10px 20px;
     border-left: 1px solid orange;
 }
 
-.content-item {
+.content-item_layout {
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
+    
 }
 
     .content-item > p {
         margin-bottom: 30px;
     }
 
-.video_block {
-    margin-right: 10px;
+.video_block_layout {
+    margin: 0 5px;
     margin-bottom: 10px;
     position: relative;
-    width: 30%;
+    width: 336px;
     min-width: 260px;
 }
+
+.content-item_video {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.video_block_video {
+    margin-bottom: 10px;
+    position: relative;
+    width: 290px;
+    min-width: 260px;
+}
+
+
+
 .video_img { /*ХЗ*/
-        object-fit: contain;
-        object-position: center;
-        width: 100%;    
+    object-fit: contain;
+    object-position: center;
+    width: 100%;    
 }
 
 .about_video {
     background-color: #222222;
     padding: 2px 0 0 5px;
     border: 1px solid #3b3939;
-    width: 100%; /*хардкод*/
+    width: 100%;
     overflow: auto;
     height: 25px;
 }
@@ -203,6 +223,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 24%;
     margin: 0px 10px 15px 0px;
     min-width: 200px;
+    max-width: 260px;
 }
 
 .photo_block img {
@@ -267,8 +288,6 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .Category {
-    text-align: left;
-    height: 100%;
     padding-right: 5px;
 }
 
@@ -278,6 +297,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .Category > ul {
         padding-left: 15px;
+        text-align: left;
     }
 
 
@@ -318,8 +338,9 @@ a {
 }
 
 .log {
-    top: 0px;
-    right: 0px;
+    position:absolute;
+    top: 20px;
+    right: 10px;
     align-items: center;
 }
 
@@ -351,8 +372,8 @@ a {
     }
 
 .home {
-    width: 20%;
-    min-width: 250px;
+    margin: 5px;
+    margin-top: 3px;
 }
 
 
@@ -386,8 +407,9 @@ div.h5 {
 }
 
 .container-block {
-    width: 96%;
+    width: 1200px;
     margin: 0 auto;
+
 }
 
 .video-block {
