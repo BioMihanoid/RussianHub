@@ -204,7 +204,10 @@ h1, h2, h3, h4, h5, h6 {
 .photo_block {
     width: 24%;
     margin: 0px 10px 15px 0px;
-    min-width: 200px;
+    min-width: 260px;
+    max-width: 270px;
+    flex-grow: 1;
+
 }
 
 .photo_block img {
