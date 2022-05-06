@@ -81,8 +81,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 /*--------------------*/
 
+.main_container {
+    max-width: 1263px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1263px) {
+    .main_container {
+        max-width: 970px;
+    }
+}
+
+@media (max-width: 992px) {
+    .main_container {
+        max-width: 750px;
+    }
+    .main_container .home img {
+        
+    }
+}
+
+@media (max-width: 768px) {
+    .main_container {
+        max-width: none;
+    }
+    .maim_container home img {
+        width: 300px;
+    }
+}
+
+
 body {
-    background: red;
+
+    
 }
 
 input, button, textarea {
@@ -322,10 +353,7 @@ a {
 }
 
 .log {
-    position:absolute;
-    top: 20px;
-    right: 10px;
-    align-items: center;
+
 }
 
 .Navbar {
@@ -356,6 +384,7 @@ a {
     }
 
 .home {
+    width: 15%;
     margin: 5px;
     margin-top: 3px;
 }
@@ -363,6 +392,8 @@ a {
 
     .home img {
         width: 100%;
+        object-fit: contain;
+
     }
 
 .form {
@@ -391,7 +422,7 @@ div.h5 {
 }
 
 .container-block {
-    width: 1200px;
+    width: 98%;
     margin: 0 auto;
 
 }
