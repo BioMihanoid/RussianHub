@@ -12,13 +12,17 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <meta name="viewport" content="width=1263px" /> -->
 
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-widthб initial-scale=1.0" />
 </head>
 <div class="main_container">
     <body>
         <header>
             <div class="Navbar">
-
+                <div class= "hidden_category"
+                    <span class="hidden_category__text">
+                        Категории
+                    </span>
+                </div>
                 <div class="home">
                     <a class="" asp-controller="Home" asp-action="Index"> <img src="~/Img/RH_.jpg" height="" width="" /> </a>
                 </div>
@@ -40,17 +44,21 @@
                             <a asp-controller="Home" asp-action="Blog">Блог</a>
                         </div>
                     </div>
-                    
-                        <form class="form">
-                            <div class="text_area">
-                                <input placeholder="Искать здесь" />
-                            </div>
-                            <div class="search">
-                                <button>
-                                    <img src="/Img/search3.png" width="32px" height="32px" />
-                                </button>
-                            </div>
-                        </form>
+
+                    <form class="form">
+                        <div class="text_area">
+                            <input placeholder="Искать здесь" />
+                        </div>
+                        <div class="search">
+                            <button>
+                                <img src="/Img/search3.png" width="32px" height="32px" />
+                            </button>
+                        </div>
+                    </form>
+                    <div class="burger">
+                        <span></span>
+                    </div>
+
                 </div>
 
                 <div class="log">
@@ -59,13 +67,13 @@
 
             </div>
         </header>
-        
-            <div class="">
-                <main role="main" class="pb-3">
-                    @RenderBody()
-                </main>
-            </div>
-      
+
+        <div class="">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
         <footer class="">
             <div align="center">
                 <a asp-area="" asp-controller="Home" asp-action="Privacy">Конфиденциальность</a>

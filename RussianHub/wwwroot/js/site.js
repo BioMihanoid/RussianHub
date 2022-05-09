@@ -24,3 +24,6 @@ $(function () {
         $(this).select();
     });
 });
+
+
+

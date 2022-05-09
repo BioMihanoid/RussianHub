@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Роман\\Desktop\\RussianHub\\RussianHub\\RussianHub.csproj": {}
+    "C:\\Users\\Роман\\source\\repos\\RussianHub\\RussianHub\\RussianHub.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Роман\\Desktop\\RussianHub\\RussianHub\\RussianHub.csproj": {
+    "C:\\Users\\Роман\\source\\repos\\RussianHub\\RussianHub\\RussianHub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Роман\\Desktop\\RussianHub\\RussianHub\\RussianHub.csproj",
+        "projectUniqueName": "C:\\Users\\Роман\\source\\repos\\RussianHub\\RussianHub\\RussianHub.csproj",
         "projectName": "RussianHub",
-        "projectPath": "C:\\Users\\Роман\\Desktop\\RussianHub\\RussianHub\\RussianHub.csproj",
+        "projectPath": "C:\\Users\\Роман\\source\\repos\\RussianHub\\RussianHub\\RussianHub.csproj",
         "packagesPath": "C:\\Users\\Роман\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Роман\\Desktop\\RussianHub\\RussianHub\\obj\\",
+        "outputPath": "C:\\Users\\Роман\\source\\repos\\RussianHub\\RussianHub\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

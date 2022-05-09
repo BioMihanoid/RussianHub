@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a32IrewbcMRaaFdNlq3ubn9cOr011LlsVJZMAsb9UJyXG2QmVuCb41L2zS9PH4ynRQgf2o2AWcvswO6pxA41wg==",
+  "dgSpecHash": "tsfHG68f1PawQ/wY4tYlMvLXfOoRgq4hjuWeL1r4uoa7jmbXfAbY70P899ty0cYo0+tpj1BPptPF2ZYdP7IByA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Роман\\Desktop\\RussianHub\\RussianHub\\RussianHub.csproj",
+  "projectFilePath": "C:\\Users\\Роман\\source\\repos\\RussianHub\\RussianHub\\RussianHub.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Роман\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Роман\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
