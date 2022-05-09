@@ -1,5 +1,5 @@
 <div align="center">
-## RussianHub
+  <h1> RussianHub </h1>
 </div>
 
 ## Technologies in this project
