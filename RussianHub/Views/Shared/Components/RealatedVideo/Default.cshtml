@@ -1,0 +1,13 @@
+﻿@model IEnumerable<RussianHub.Models.Video>
+
+@foreach (var obj in Model)
+{
+    <div class="video_block">
+    <a asp-controller="Home" asp-action="Video" asp-route-id="@obj.Id" target="_blank">
+        <img class="video_img" src="@obj.LinkPreview" />
+        <div class="about_video">
+            @obj.Name
+        </div>
+    </a>
+</div>
+}
