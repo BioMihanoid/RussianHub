@@ -2,9 +2,7 @@
   # RussianHub
 </div>
 
-## Getting start
-
-## Technologies in the project
+## Technologies in this project
 * C#
 * ASP.NET MVC
 * Entity Framework
