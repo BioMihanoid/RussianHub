@@ -3,7 +3,7 @@
 </div>
 
 ## Description
-Russian **Russian hub** is similar to PornHub, but Russian. Unlike PornHub, our hub is open source and created for all comrades around the world. Let's provide every home with a high-quality porn service! Hurray!
+**Russian hub** is similar to PornHub, but Russian. Unlike PornHub, our hub is open source and created for all comrades around the world. Let's provide every home with a high-quality porn service! Hurray!
 
 ## Motivation
 MSTU STANKIN will hurt if it turns out poop
