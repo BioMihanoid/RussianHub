@@ -2,12 +2,15 @@
   <h1> RussianHub </h1>
 </div>
 
+## Description
+Russian **Russian hub** is similar to PornHub, but Russian. Unlike PornHub, our hub is open source and created for all comrades around the world. Let's provide every home with a high-quality porn service! Hurray!
+
 ## Technologies in this project
-* C#
-* ASP.NET MVC
-* Entity Framework
-* HTML
-* CSS
+* C# 6.0
+* ASP.NET MVC 5
+* Entity Framework 6
+* HTML5
+* CSS3
 * JS
 
 ## Authors
