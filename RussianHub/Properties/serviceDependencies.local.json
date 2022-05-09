@@ -6,6 +6,10 @@
     },
     "secrets1": {
       "type": "secrets.user"
+    },
+    "mssql2": {
+      "type": "mssql.local",
+      "connectionId": "ConnectionStrings:VIdeoContext"
     }
   }
 }

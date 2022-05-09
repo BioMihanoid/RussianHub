@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using RussianHub.Data;
 using RussianHub.Models;
 using System.Diagnostics;
 
@@ -7,16 +9,31 @@ namespace RussianHub.Controllers
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
+		private readonly VideoContext _videoContext;
 
-		public HomeController(ILogger<HomeController> logger)
+		public HomeController(ILogger<HomeController> logger, VideoContext videoContext)
 		{
 			_logger = logger;
+			_videoContext = videoContext;
 		}
 
-		public IActionResult Index()
+		public async Task<IActionResult> Index(string serachElm)
 		{
-			return View();
+			if (serachElm != null)
+            {
+				var list = await _videoContext.Video.ToListAsync();
+				var res = from v in list
+						  where v.Genres.Contains(serachElm) || v.Actors.Contains(serachElm) || v.Name.Contains(serachElm) || v.Description.Contains(serachElm)
+						  select v;
+				return View(res);
+			}
+			return View(await _videoContext.Video.ToListAsync());
 		}
+
+		public ActionResult GetCategory()
+        {
+			return PartialView(_videoContext.Video.ToList());
+        }
 
 		public IActionResult Privacy()
 		{
@@ -64,9 +81,19 @@ namespace RussianHub.Controllers
 			return View();
         }
 
-		public IActionResult Video()
+		public IActionResult Video(Guid id)
         {
-			return View();
+			var list = _videoContext.Video.ToList();
+			Video video = new Video();
+			foreach (var obj in list)
+			{
+				if (obj.Id == id)
+				{
+					video = obj;
+					break;
+				}
+			}
+			return View(video);
         }
 	}
 }

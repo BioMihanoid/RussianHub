@@ -1,0 +1,26 @@
+﻿@model IEnumerable<RussianHub.Models.Video>
+
+@{
+    List<string> category = new List<string>();
+    foreach (var obj in Model)
+    {
+        string[] genre = obj.Genres.Split('/');
+        for (int i = 0; i < genre.Length; i++)
+            category.Add(genre[i]);
+    }
+    var temp = category.Distinct<string>().ToArray();
+    string[] res = new string[temp.Length];
+    for (int i = 0; i < temp.Length; i++)
+        res[i] = temp[i].ToString();
+    Array.Sort(res, StringComparer.InvariantCulture);
+}
+
+<div class="Category">
+    <ul>
+        @foreach (var r in res)
+        {
+            <li><a asp-controller="Home" asp-action="Index" asp-route-serachElm="@r">@r</a></li>
+        }
+    </ul>
+
+</div>

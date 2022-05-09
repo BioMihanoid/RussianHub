@@ -1,8 +1,13 @@
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RussianHub.Data;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<VideoContext>(options =>
+
+    options.UseSqlServer(builder.Configuration.GetConnectionString("VIdeoContext") ?? throw new InvalidOperationException("Connection string 'VIdeoContext' not found.")));
 var config = builder.Configuration;
 
 // Add services to the container.

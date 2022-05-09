@@ -18,7 +18,7 @@
     <body>
         <header>
             <div class="Navbar">
-                <div class= "hidden_category"
+                <div class="hidden_category"
                     <span class="hidden_category__text">
                         Категории
                     </span>
@@ -45,14 +45,12 @@
                         </div>
                     </div>
 
-                    <form class="form">
+                    <form class="form" asp-controller="Home" asp-action="Index">
                         <div class="text_area">
-                            <input placeholder="Искать здесь" />
+                            <input placeholder="Искать здесь" name="serachElm" />
                         </div>
                         <div class="search">
-                            <button>
-                                <img src="/Img/search3.png" width="32px" height="32px" />
-                            </button>
+                            <input type="image" src="/Img/search3.png" style="width: 32px; height: 32px">
                         </div>
                     </form>
                     <div class="burger">
@@ -62,6 +60,9 @@
                 </div>
 
                 <div class="log">
+                    <div>
+                        <a asp-controller="Videos" asp-action="Index">База данных с видео</a>
+                    </div>
                     <partial name="_LoginPartial" />
                 </div>
 

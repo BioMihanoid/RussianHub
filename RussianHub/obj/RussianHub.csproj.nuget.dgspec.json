@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Роман\\source\\repos\\RussianHub\\RussianHub\\RussianHub.csproj": {}
+    "D:\\C# project\\RussianHub\\RussianHub\\RussianHub.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Роман\\source\\repos\\RussianHub\\RussianHub\\RussianHub.csproj": {
+    "D:\\C# project\\RussianHub\\RussianHub\\RussianHub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Роман\\source\\repos\\RussianHub\\RussianHub\\RussianHub.csproj",
+        "projectUniqueName": "D:\\C# project\\RussianHub\\RussianHub\\RussianHub.csproj",
         "projectName": "RussianHub",
-        "projectPath": "C:\\Users\\Роман\\source\\repos\\RussianHub\\RussianHub\\RussianHub.csproj",
-        "packagesPath": "C:\\Users\\Роман\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Роман\\source\\repos\\RussianHub\\RussianHub\\obj\\",
+        "projectPath": "D:\\C# project\\RussianHub\\RussianHub\\RussianHub.csproj",
+        "packagesPath": "C:\\Users\\pechn\\.nuget\\packages\\",
+        "outputPath": "D:\\C# project\\RussianHub\\RussianHub\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Роман\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pechn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -99,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }
