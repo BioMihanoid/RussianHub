@@ -1,5 +1,5 @@
 .idea
 .vs
 .vscode
-RussianHub/obj/*
-RussianHub/bin/*
+RussianHub/obj
+RussianHub/bin
