@@ -8,6 +8,10 @@ Russian **Russian hub** is similar to PornHub, but Russian. Unlike PornHub, our 
 ## Motivation
 MSTU STANKIN will hurt if it turns out poop
 
+## How to work with project?
+
+update required
+
 ## Technologies in this project
 * C# 6.0
 * ASP.NET MVC 5
@@ -15,6 +19,10 @@ MSTU STANKIN will hurt if it turns out poop
 * HTML5
 * CSS3
 * JS
+
+## Project plans
+
+update required
 
 ## Authors
 * **Mikhail Pechnikov** - *Backend* - [BioMihanoid](https://github.com/BioMihanoid)
