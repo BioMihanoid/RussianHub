@@ -32,7 +32,7 @@ builder.Services.AddAuthentication()
     {
         microsoftOptions.ClientId = "88e303fd-6e9d-4029-8b3b-ec15ef6301c7";
         microsoftOptions.ClientSecret = "e973778c-c920-4fb4-ba16-2a81c988c60b";
-    }); ;
+    });
 
 var app = builder.Build();
 
