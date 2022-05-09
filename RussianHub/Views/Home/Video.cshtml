@@ -163,11 +163,11 @@
 
                     <div class="other-video">
                         <div class="similar_video">
-                            Похожие видео
+                            Другие видео
 
                         </div>
                         <div class="content-item">
-                            @await Component.InvokeAsync("RealatedVideo")
+                            @await Component.InvokeAsync("RealatedVideo", @Model.Id)
                         </div>
                     </div>
                 </div>

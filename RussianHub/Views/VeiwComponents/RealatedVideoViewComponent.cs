@@ -12,10 +12,13 @@ namespace RussianHub.Views.VeiwComponents
             _videoDataBase = videoDataBase;
         }
 
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(Guid id)
         {
-            //TODO add logic choose video
-            return View(_videoDataBase.Video.ToList());
+            var list = _videoDataBase.Video.ToList();
+            var res = from v in list
+                      where v.Id != id
+                      select v;
+            return View(res);
         }
     }
 }
