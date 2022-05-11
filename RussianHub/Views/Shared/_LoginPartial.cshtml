@@ -9,7 +9,6 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <div><a asp-controller="Home" asp-action="Admin">Админ панель</a></div>
-    <div><a asp-controller="Home" asp-action="Bookmarks">Закладки</a></div>
     <div>
         <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity?.Name!</a>
     </div>

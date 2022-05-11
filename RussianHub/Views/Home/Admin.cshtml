@@ -1,10 +1,11 @@
 ﻿
 @{
-    ViewData["Title"] = "Admin";
+    ViewData["Title"] = "Админка";
 }
 
-<h1>Admin</h1>
-
-<div>
-    Help
+<div class="wrap__content">
+    @await Component.InvokeAsync("CategoryList")
+    <div class="content-container">
+        <a asp-controller="Videos" asp-action="Index">База данных с видео</a>
+    </div>
 </div>

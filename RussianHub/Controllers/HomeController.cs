@@ -24,7 +24,7 @@ namespace RussianHub.Controllers
             {
 				var list = await _videoContext.Video.ToListAsync();
 				var res = from v in list
-						  where v.Genres.Contains(serachElm) || v.Actors.Contains(serachElm) || v.Name.Contains(serachElm) || v.Description.Contains(serachElm)
+						  where v.Genres.ToLower().Contains(serachElm.ToLower()) || v.Actors.ToLower().Contains(serachElm.ToLower()) || v.Name.ToLower().Contains(serachElm.ToLower()) || v.Description.ToLower().Contains(serachElm.ToLower())
 						  select v;
 				return View(res);
 			}
@@ -90,6 +90,9 @@ namespace RussianHub.Controllers
 			{
 				if (obj.Id == id)
 				{
+					obj.CountViews++;
+					_videoContext.Update(obj);
+					_videoContext.SaveChanges();
 					video = obj;
 					break;
 				}

@@ -24,5 +24,8 @@ namespace RussianHub.Models
         public string? Actors { get; set; }
         [Display(Name = "Теги видео")]
         public string? Tags { get; set; }
+        [Display(Name = "Колличество просмотров")]
+        public int CountViews { get; set; } = 0;
+        //public virtual ICollection<Comment> Comments { get; set; }
     }
 }

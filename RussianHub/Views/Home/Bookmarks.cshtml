@@ -1,5 +1,26 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
     ViewData["Title"] = "Мои закладки";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="wrap__content">
+    @await Component.InvokeAsync("CategoryList")
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <div class="content-container">
+            <h1>@ViewData["Title"]</h1>
+        </div>
+    }
+    else
+    {
+        <div class="content-container">
+            <h1>@ViewData["Title"]</h1>
+            <p>Тут будут ваши избранные секс ролики, ставьте роликам лайк, чтобы добавить их в закладки! Ищите порно ролики здесь: <a asp-controller="Home" asp-action="Index">RussianHub</a></p>
+            <p>Не потеряйте свои закладки! <a asp-area="Identity" asp-page="/Account/Login">Войдите</a> или <a asp-area="Identity" asp-page="/Account/Register">зарегистрируйтесь</a>, а то ваши закладки потеряются при смене браузера или выходе из приватного режима</p>
+        </div>
+    }
+
+</div>

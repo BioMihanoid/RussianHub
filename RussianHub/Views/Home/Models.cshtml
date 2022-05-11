@@ -2,4 +2,17 @@
     ViewData["Title"] = "Модели";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="wrap__content">
+    @await Component.InvokeAsync("CategoryList")
+    <div class="content-container">
+        <h1>Самые трендовые модели</h1>
+        <form class="form" asp-controller="Home" asp-action="Index">
+            <div class="text_area">
+                <input placeholder="Поиск модели" name="serachElm" />
+            </div>
+            <div class="search">
+                <input type="image" src="/Img/search3.png" style="width: 32px; height: 32px">
+            </div>
+        </form>
+    </div>
+</div>

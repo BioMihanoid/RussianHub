@@ -2,4 +2,11 @@
     ViewData["Title"] = "Блог";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="wrap__content">
+    @await Component.InvokeAsync("CategoryList")
+    <div class="content-container">
+        <p>
+            Спешим вас порадовать о скором открытии нового нашего порно блога в котором мы и наши пользователи будут вести свои секс блоги и делится своими порно историями, ждите запуска нового раздела Порно Блог в ближайшее время.
+        </p>
+    </div>
+</div>
