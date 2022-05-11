@@ -4,6 +4,7 @@ using RussianHub.Data;
 using RussianHub.Models;
 using System.Diagnostics;
 
+
 namespace RussianHub.Controllers
 {
 	public class HomeController : Controller
