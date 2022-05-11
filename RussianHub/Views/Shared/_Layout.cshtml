@@ -14,11 +14,11 @@
 
     <meta name="viewport" content="width=device-widthб initial-scale=1.0" />
 </head>
-<div class="main_container">
-    <body>
-        <header>
+<body>
+    <div class="main_container">
+        <header class="header">
             <div class="Navbar">
-                <div class="hidden_category"
+                <div class="hidden_category">
                     <span class="hidden_category__text">
                         Категории
                     </span>
@@ -60,20 +60,19 @@
                 </div>
 
                 <div class="log">
-                    <div><a asp-controller="Home" asp-action="Bookmarks">Закладки</a></div>
+                    <a asp-controller="Home" asp-action="Bookmarks">Закладки</a>
                     <partial name="_LoginPartial" />
                 </div>
 
             </div>
         </header>
 
-        <div class="">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
+        <main class="main">
+            @RenderBody()
+        </main>
 
-        <footer class="">
+
+        <footer class="_footer">
             <div align="center">
                 <a asp-area="" asp-controller="Home" asp-action="Privacy">Конфиденциальность</a>
                 <a asp-area="" asp-controller="Home" asp-action="TermsOfUse">Условия использования</a>
@@ -81,10 +80,10 @@
                 &copy; 2022 - RussianHub
             </div>
         </footer>
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-        @await RenderSectionAsync("Scripts", required: false)
-    </body>
-</div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
 </html>

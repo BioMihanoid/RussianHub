@@ -38,16 +38,15 @@
                                     999
                                 </div>
                                 <div class="add_favorite">
-                                    <img src="/img/Like.png" height="25px" width="30px" />
+                                    <img src="/img/like_fav.png" height="30px" width="32px" />
                                 </div>
                             </div>
 
                         </div>
                         <div class=video-additions>
-
                             <div class="kek">
                                 <div class="download">
-                                    <img src="/img/skachat.png" height="25px" width="30px" />
+                                    <img src="/img/skachat.png" height="17px" width="22px" />
                                     Cкачать
                                 </div>
                                 <div class="views">
@@ -76,12 +75,13 @@
                                     <img src="/img/dislaik.png" height="35px" width="40px" />
                                 </div>
                             </div>
-
                             <p>
                                 Категории:
                                 @for (i = 0; i < genre.Length; i++)
                                 {
-                                    <a asp-controller="Home" asp-action="Index" asp-route-serachElm="@genre[i]">@genre[i]</a>
+                                    <span class="category_title">
+                                        <a asp-controller="Home" asp-action="Index" asp-route-serachElm="@genre[i]">@genre[i]</a>
+                                    </span>
                                 }
                             </p>
                             <p>
@@ -90,9 +90,14 @@
                                 {
                                     @for (i = 0; i < actor.Length; i++)
                                     {
-                                        <a asp-controller="Home" asp-action="Index" asp-route-serachElm="@actor[i]">@actor[i]</a>
+                                        <span class="category_title">
+                                            <a asp-controller="Home" asp-action="Index" asp-route-serachElm="@actor[i]">@actor[i]</a>
+                                        </span>
+
                                     }
-                                    <a href="">Знаете модель из видео?</a>
+                                    <div class="do_u_know category_title">
+                                        <a>Знаете модель из видео?</a>
+                                    </div>
                                 }
                                 else
                                 {
@@ -101,14 +106,11 @@
                             </p>
                             @if (Model.Description != null)
                             {
-                                <p>@Model.Description</p>
+                                <div>@Model.Description</div>
                             }
                         </div>
                         <div class="video-comments">
-
                             <p> Комментарии</p>
-
-
                             <div class="comment">
                                 <div class="comment-user comment_style">
                                     <div class="comment-user_name">
@@ -137,7 +139,7 @@
                                             <div class="comment-grade">
                                                 3
                                             </div>
-                                            <div comment_dislike>
+                                            <div class="comment_dislike">
                                                 <img src="/img/dislaik.png" height="15px" width="20px" />
                                             </div>
                                         </div>
@@ -145,7 +147,14 @@
                                 </div>
                             </div>
 
-                            <p>Чтобы оставить комментарий войдите или зарегистрируйтесь или оставьте так:</p>
+                            <div class="helper">
+                                Чтобы оставить комментарий
+
+                                <a asp-area="Identity" asp-page="/Account/Login" class="to_log"> войдите</a>
+                                или
+                                <a asp-area="Identity" asp-page="/Account/Register" class="to_log">зарегистрируйтесь</a>
+                                или оставьте так:
+                            </div>
 
                             <form class="video_form" method="post" action="#">
                                 <div>
@@ -164,10 +173,10 @@
                     <div class="other-video">
                         <div class="similar_video">
                             Другие видео
-
                         </div>
                         <div class="content-item">
                             @await Component.InvokeAsync("RealatedVideo", @Model.Id)
+
                         </div>
                     </div>
                 </div>
