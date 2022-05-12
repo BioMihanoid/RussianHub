@@ -6,13 +6,42 @@
     @await Component.InvokeAsync("CategoryList")
     <div class="content-container">
         <h1>Самые трендовые модели</h1>
-        <form class="form" asp-controller="Home" asp-action="Index">
-            <div class="text_area">
-                <input placeholder="Поиск модели" name="serachElm" />
+        <div style="display: inline-block">
+            <form class="form" asp-controller="Home" asp-action="Index">
+                <div class="text_area">
+                    <input placeholder="Поиск модели" name="serachElm" />
+                </div>
+                <div class="search">
+                    <input type="image" src="/Img/search3.png" style="width: 32px; height: 32px">
+                </div>
+            </form>
+        </div>
+        <div class="content-item">
+            <div class="model_block">
+                <a>
+                    <img class="model_img" src="https://avatars.mds.yandex.net/get-images-cbir/1602301/OaN_da_BwD6xMNP_0lvf1g1940/ocr">
+                    <div class="about_model">
+                        <div class="model_block__model_names">
+                            <div class="model_block__russian_name">
+                                Саша грей
+                            </div>
+                            <div class="model_block__english_name">
+                                Sasha Gray
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+                <div class="model_block__country">
+                    <img src="https://cdn-icons-png.flaticon.com/512/321/321269.png" width="40px" height="30px" />
+                </div>
+                <div class="model_block__count_video">
+                    100
+                </div>
+                <div class="model_block__video_img">
+                    <img src="/img/video.png" height="30px" width="40px" />
+                </div>
             </div>
-            <div class="search">
-                <input type="image" src="/Img/search3.png" style="width: 32px; height: 32px">
-            </div>
-        </form>
+
+        </div>
     </div>
-</div>
