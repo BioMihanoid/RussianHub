@@ -10,6 +10,14 @@
     "mssql2": {
       "type": "mssql.local",
       "connectionId": "ConnectionStrings:VIdeoContext"
+    },
+    "mssql3": {
+      "type": "mssql.local",
+      "connectionId": "ConnectionStrings:ModelContext"
+    },
+    "mssql4": {
+      "type": "mssql.local",
+      "connectionId": "ConnectionStrings:ActorContext"
     }
   }
 }

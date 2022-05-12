@@ -5,6 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<ActorContext>(options =>
+
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ActorContext") ?? throw new InvalidOperationException("Connection string 'ActorContext' not found.")));
+
 builder.Services.AddDbContext<VideoContext>(options =>
 
     options.UseSqlServer(builder.Configuration.GetConnectionString("VIdeoContext") ?? throw new InvalidOperationException("Connection string 'VIdeoContext' not found.")));

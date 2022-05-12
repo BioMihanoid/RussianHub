@@ -8,47 +8,33 @@ using RussianHub.Data;
 
 #nullable disable
 
-namespace RussianHub.Migrations
+namespace RussianHub.Migrations.Actor
 {
-    [DbContext(typeof(VideoContext))]
-    partial class VideoContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(ActorContext))]
+    partial class ActorContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.4")
+                .HasAnnotation("ProductVersion", "6.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("RussianHub.Models.Video", b =>
+            modelBuilder.Entity("RussianHub.Models.Actor", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Actors")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CountViews")
+                    b.Property<int>("CountVideos")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("DateOFPublish")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Genres")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Link")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LinkPreview")
+                    b.Property<string>("LinkPhoto")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -56,12 +42,13 @@ namespace RussianHub.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Tags")
+                    b.Property<string>("NameOnEnglish")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Video");
+                    b.ToTable("Actor");
                 });
 #pragma warning restore 612, 618
         }

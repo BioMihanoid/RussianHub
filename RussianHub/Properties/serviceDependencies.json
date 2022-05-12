@@ -10,6 +10,14 @@
     "mssql2": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:VIdeoContext"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:ModelContext"
+    },
+    "mssql4": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:ActorContext"
     }
   }
 }

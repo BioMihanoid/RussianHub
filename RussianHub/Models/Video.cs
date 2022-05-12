@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace RussianHub.Models
 {
@@ -25,6 +26,7 @@ namespace RussianHub.Models
         [Display(Name = "Теги видео")]
         public string? Tags { get; set; }
         [Display(Name = "Колличество просмотров")]
+        public DateTime? DateOFPublish { get; set; } = DateTime.Now;
         public int CountViews { get; set; } = 0;
         //public virtual ICollection<Comment> Comments { get; set; }
     }

@@ -3,6 +3,14 @@
     "mssql2": {
       "restored": true,
       "restoreTime": "2022-05-09T14:40:44.3886536Z"
+    },
+    "mssql3": {
+      "restored": true,
+      "restoreTime": "2022-05-12T10:48:33.336351Z"
+    },
+    "mssql4": {
+      "restored": true,
+      "restoreTime": "2022-05-12T11:21:28.1989102Z"
     }
   },
   "parameters": {}

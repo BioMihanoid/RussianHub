@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<RussianHub.Models.Actor>
+
+@{
     ViewData["Title"] = "Модели";
 }
 
@@ -7,41 +9,44 @@
     <div class="content-container">
         <h1>Самые трендовые модели</h1>
         <div style="display: inline-block">
-            <form class="form" asp-controller="Home" asp-action="Index">
+            <form class="form" asp-controller="Home" asp-action="Models">
                 <div class="text_area">
-                    <input placeholder="Поиск модели" name="serachElm" />
+                    <input placeholder="Поиск модели" name="searchModel" />
                 </div>
                 <div class="search">
                     <input type="image" src="/Img/search3.png" style="width: 32px; height: 32px">
                 </div>
             </form>
         </div>
-        <div class="content-item">
-            <div class="model_block">
-                <a>
-                    <img class="model_img" src="https://avatars.mds.yandex.net/get-images-cbir/1602301/OaN_da_BwD6xMNP_0lvf1g1940/ocr">
-                    <div class="about_model">
-                        <div class="model_block__model_names">
-                            <div class="model_block__russian_name">
-                                Саша грей
+        @foreach (var obj in Model)
+        {
+            <div class="content-item">
+                <div class="model_block">
+                    <a asp-controller="Home" asp-action="Index" asp-route-serachElm="@obj.Name">
+                        <img class="model_img" src="@obj.LinkPhoto">
+                        <div class="about_model">
+                            <div class="model_block__model_names">
+                                <div class="model_block__russian_name">
+                                    @obj.Name
+                                </div>
+                                <div class="model_block__english_name">
+                                    @obj.NameOnEnglish
+                                </div>
                             </div>
-                            <div class="model_block__english_name">
-                                Sasha Gray
-                            </div>
+
                         </div>
-
+                    </a>
+                    <div class="model_block__country">
+                        <img src="https://cdn-icons-png.flaticon.com/512/321/321269.png" width="40px" height="30px" />
                     </div>
-                </a>
-                <div class="model_block__country">
-                    <img src="https://cdn-icons-png.flaticon.com/512/321/321269.png" width="40px" height="30px" />
+                    <div class="model_block__count_video">
+                        @obj.CountVideos
+                    </div>
+                    <div class="model_block__video_img">
+                        <img src="/img/video.png" height="30px" width="40px" />
+                    </div>
                 </div>
-                <div class="model_block__count_video">
-                    100
-                </div>
-                <div class="model_block__video_img">
-                    <img src="/img/video.png" height="30px" width="40px" />
-                </div>
-            </div>
 
-        </div>
+            </div>
+        }
     </div>
