@@ -42,6 +42,10 @@ html, body {
     -webkit-text-size-adjust: 100%;
 }
 
+footer {
+    border-top: 1px solid #f4792e;
+    padding: 5px 0;
+}
 input, button, textarea {
     font-family: inherit;
 }
@@ -886,7 +890,7 @@ input {
         text-align: center;
         width: 100%;
         border-bottom: 1px solid #f4792e;
-        padding-bottom: 19px;
+        padding-bottom: 10px;
     }
 
     .log {
@@ -910,6 +914,9 @@ input {
 
     .photo_block {
         max-width: 23%;
+    }
+    .model_block {
+        max-width:32%;
     }
 }
 
@@ -966,6 +973,7 @@ input {
     }
 
     .hidden_category.active {
+        top: 80px;
     }
 
     .hidden_category:active {
@@ -1076,6 +1084,9 @@ input {
 
 @media (max-width: 758px) {
 
+    .model_block {
+        max-width: 47%;
+    }
     .burger {
         right: 30px;
     }
@@ -1179,6 +1190,10 @@ input {
 @media (max-width: 340px) {
 
     .photo_block {
+        max-width: 100%;
+    }
+
+    .model_block {
         max-width: 100%;
     }
 }

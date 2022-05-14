@@ -18,9 +18,9 @@
                 </div>
             </form>
         </div>
-        @foreach (var obj in Model)
-        {
-            <div class="content-item">
+        <div class="content-item">
+            @foreach (var obj in Model)
+            {
                 <div class="model_block">
                     <a asp-controller="Home" asp-action="Index" asp-route-serachElm="@obj.Name">
                         <img class="model_img" src="@obj.LinkPhoto">
@@ -46,7 +46,7 @@
                         <img src="/img/video.png" height="30px" width="40px" />
                     </div>
                 </div>
-
-            </div>
-        }
+            }
+        </div>
     </div>
+</div>

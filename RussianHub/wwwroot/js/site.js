@@ -25,5 +25,17 @@ $(function () {
     });
 });
 
+$(function () {
+    $('.burger').click(function (event) {
+        $('.burger, .log, .home, .hidden_category, .Navbar').toggleClass('active');
+    });
+});
+
+
+$(function () {
+    $('.hidden_category').click(function (event) {
+        $('.Category').toggleClass('hidden_menu');
+    });
+});
 
 
