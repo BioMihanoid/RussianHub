@@ -11,6 +11,10 @@
     "mssql4": {
       "restored": true,
       "restoreTime": "2022-05-12T11:21:28.1989102Z"
+    },
+    "mssql5": {
+      "restored": true,
+      "restoreTime": "2022-05-14T19:30:23.7927824Z"
     }
   },
   "parameters": {}

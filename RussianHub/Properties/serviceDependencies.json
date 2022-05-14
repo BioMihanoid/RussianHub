@@ -18,6 +18,10 @@
     "mssql4": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:ActorContext"
+    },
+    "mssql5": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:CommentContext"
     }
   }
 }

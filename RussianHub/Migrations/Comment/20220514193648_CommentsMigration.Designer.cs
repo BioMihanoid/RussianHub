@@ -3,17 +3,19 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RussianHub.Data;
 
 #nullable disable
 
-namespace RussianHub.Migrations
+namespace RussianHub.Migrations.Comment
 {
-    [DbContext(typeof(VideoContext))]
-    partial class VideoContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(CommentContext))]
+    [Migration("20220514193648_CommentsMigration")]
+    partial class CommentsMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

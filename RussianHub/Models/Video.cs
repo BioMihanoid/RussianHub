@@ -28,6 +28,8 @@ namespace RussianHub.Models
         [Display(Name = "Колличество просмотров")]
         public DateTime? DateOFPublish { get; set; } = DateTime.Now;
         public int CountViews { get; set; } = 0;
+        public List<Comment> Comments { get; set; } = new();
+        //public string? Duration { get; set; }
         //public virtual ICollection<Comment> Comments { get; set; }
     }
 }

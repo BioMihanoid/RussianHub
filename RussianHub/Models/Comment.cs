@@ -16,6 +16,8 @@ namespace RussianHub.Models
         [Display(Name = "Ссылка на фото профиля")]
         public string? LinkPhotoProfile { get; set; }
         [Display(Name = "Дата публикации")]
-        public DateTime? DataPublish { get; set; } = DateTime.Now;
+        public DateTime? DataPublish { get; } = DateTime.Now;
+        public Guid VideoId { get; set; }
+        public Video? Video { get; set; }
     }
 }

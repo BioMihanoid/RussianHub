@@ -5,6 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<CommentContext>(options =>
+
+    options.UseSqlServer(builder.Configuration.GetConnectionString("CommentContext") ?? throw new InvalidOperationException("Connection string 'CommentContext' not found.")));
+
 builder.Services.AddDbContext<ActorContext>(options =>
 
     options.UseSqlServer(builder.Configuration.GetConnectionString("ActorContext") ?? throw new InvalidOperationException("Connection string 'ActorContext' not found.")));

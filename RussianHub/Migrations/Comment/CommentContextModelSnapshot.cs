@@ -8,10 +8,10 @@ using RussianHub.Data;
 
 #nullable disable
 
-namespace RussianHub.Migrations
+namespace RussianHub.Migrations.Comment
 {
-    [DbContext(typeof(VideoContext))]
-    partial class VideoContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(CommentContext))]
+    partial class CommentContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

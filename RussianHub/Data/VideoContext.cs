@@ -16,5 +16,6 @@ namespace RussianHub.Data
         }
 
         public DbSet<RussianHub.Models.Video> Video { get; set; }
+        public DbSet<RussianHub.Models.Comment> Comment { get; set; }
     }
 }
