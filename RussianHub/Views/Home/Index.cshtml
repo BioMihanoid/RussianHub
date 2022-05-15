@@ -13,13 +13,41 @@
         <h1> Порно видео онлайн!</h1>
         <div class="filtration">
             <div class="filtration__button button_style">
-                <a asp-controller="Home" asp-action="Index" asp-route-serachElm="NewVideo">Новые</a>
+                 <a asp-controller="Home" asp-action="Index" asp-route-serachElm="NewVideo">Новые</a>
             </div>
-            <div class="filtration__button button_style">
+            <div class="filtration__button button_style hidden_sort_top">
                 <a asp-controller="Home" asp-action="Index" asp-route-serachElm="TopRating">Топ рейтинга</a>
+                <div class="hidden_sort_time" id="sort_id_1">
+                    <div>
+                        Неделю
+                    </div>
+                    <div>
+                        Месяц
+                    </div>
+                    <div>
+                        Год
+                    </div>
+                    <div>
+                        Всё время
+                    </div>
+                </div>
             </div>
-            <div class="filtration__button button_style">
-                 <a asp-controller="Home" asp-action="Index" asp-route-serachElm="TopView">Топ просмотров</a>
+            <div class="filtration__button button_style hidden_sort_view">
+                <a asp-controller="Home" asp-action="Index" asp-route-serachElm="TopView">Топ просмотров</a>
+                <div class="hidden_sort_time" id="sort_id_2">
+                    <div>
+                        Неделю
+                    </div>
+                    <div>
+                        Месяц
+                    </div>
+                    <div>
+                        Год
+                    </div>
+                    <div>
+                        Всё время
+                    </div>
+                </div>
             </div>
         </div>
         <div class="slide-title">

@@ -38,4 +38,30 @@ $(function () {
     });
 });
 
+$(".hidden_sort_top").hover(function () {
+    $('#sort_id_1').show();
+}, function () {
+    $('#sort_id_1').hide();
+});
+
+$(".hidden_sort_view").hover(function () {
+    $('#sort_id_2').show();
+}, function () {
+    $('#sort_id_2').hide();
+});
+
+
+
+
+$("#sort_id_3").hover(function () {
+    $('.hidden_sort_sex').show();
+}, function () {
+    $('.hidden_sort_sex').hide();
+});
+
+$("#sort_id_4").hover(function () {
+    $('.hidden_sort_value').show();
+}, function () {
+    $('.hidden_sort_value').hide();
+});
 

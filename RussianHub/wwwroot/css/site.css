@@ -46,6 +46,7 @@ footer {
     border-top: 1px solid #f4792e;
     padding: 5px 0;
 }
+
 input, button, textarea {
     font-family: inherit;
 }
@@ -162,6 +163,57 @@ h1 {
     font-style: italic;
 }
 
+.sort_block {
+    display: flex;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    font-size: 16px;
+}
+
+.model_do_filter {
+    width: 130px;
+    position: relative;
+    margin-left: 5px;
+    padding: 5px;
+    border: #434343;
+    background-color: #222222;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+#sort_id_3 {
+    width: 90px;
+}
+
+.hidden_sort_sex, .hidden_sort_value {
+    position: absolute;
+    padding-left: 0px;
+    top: 21px;
+    left: 0px;
+    padding-top: 5px;
+    text-align: center;
+    width: 100%;
+    z-index: 2;
+    color: orange;
+    display: none;
+}
+
+    .hidden_sort_sex div, .hidden_sort_value div {
+        padding: 5px;
+        background-color: #464646;
+        border: 1px solid #1a1a1a;
+    }
+
+        .hidden_sort_sex div:hover, .hidden_sort_value div:hover {
+            text-decoration: underline;
+        }
+
+.div_sort {
+    margin-left: 15px;
+}
+
 .short_description {
     margin-top: 15px;
 }
@@ -182,6 +234,41 @@ h1 {
     border: 1px solid #3b3939;
     background-color: #252525;
 }
+
+.filtration__button {
+    position: relative;
+}
+
+#sort_id_2 {
+    width: 138px;
+}
+
+.hidden_sort_time {
+    position: absolute;
+    text-align: center;
+    left: -30px;
+    top: 20px;
+    width: 119.5px;
+    padding: 5px;
+    display: none;
+    z-index: 3;
+    color: orange;
+}
+
+    .hidden_sort_time div {
+        width: 100%;
+        background-color: #464646;
+        padding: 5px;
+        border: 1px solid #1a1a1a;
+    }
+
+        .hidden_sort_time div:hover {
+            text-decoration: underline;
+        }
+
+    .hidden_sort_time:hover {
+        cursor: pointer;
+    }
 
 .slide-title div {
     padding: 10px;
@@ -915,8 +1002,9 @@ input {
     .photo_block {
         max-width: 23%;
     }
+
     .model_block {
-        max-width:32%;
+        max-width: 32%;
     }
 }
 
@@ -1087,6 +1175,7 @@ input {
     .model_block {
         max-width: 47%;
     }
+
     .burger {
         right: 30px;
     }

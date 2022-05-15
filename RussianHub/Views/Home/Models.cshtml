@@ -8,6 +8,39 @@
     @await Component.InvokeAsync("CategoryList")
     <div class="content-container">
         <h1>Самые трендовые модели</h1>
+        <div class="sort_block">
+            <div class="div_sort">
+                Пол:
+                <div class="model_do_filter" id="sort_id_3">
+                    Девушки
+                    <div class="hidden_sort_sex">
+                        <div>
+                            Мужчины
+                        </div>
+                        <div>
+                            Все
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div_sort">
+                Сортировка:
+                <div class="model_do_filter" id="sort_id_4">
+                    Новые
+                    <div class="hidden_sort_value">
+                        <div>
+                            По популярности
+                        </div>
+                        <div>
+                            По количеству
+                        </div>
+                        <div>
+                            По алфавиту
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div style="display: inline-block">
             <form class="form" asp-controller="Home" asp-action="Models">
                 <div class="text_area">
@@ -33,7 +66,6 @@
                                     @obj.NameOnEnglish
                                 </div>
                             </div>
-
                         </div>
                     </a>
                     <div class="model_block__country">
