@@ -50,6 +50,7 @@ https://docs.microsoft.com/ru-ru/sql/ssms/download-sql-server-management-studio-
 - [ ] Add country and gender to models
 - [ ] Make a section with a blog
 - [ ] Make a section with gifs
+- [ ] Make a table with photos
 - [ ] Make a feedback form
 - [ ] Solve the problem with the duration of the video
 - [ ] Add all sorts of videos by rating and dates
