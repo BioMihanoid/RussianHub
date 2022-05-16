@@ -10,7 +10,28 @@ MSTU STANKIN will hurt if it turns out poop
 
 ## How to work with project?
 
-update required
+The project does not have hosting yet, so you can run the project on your local machine.
+The startup algorithm is something like this (if you are working in the console):
+```
+git clone https://github.com/BioMihanoid/RussianHub
+cd  RussianHub
+add-migration -context VideoContest YourNameMigration
+update-database -context VideoContext
+add-migration -context ActorContext YourNameMigration
+update-database -context ActorContext
+add-migration -context CommentContest YourNameMigration
+update-database -context CommentContest
+dotnet run
+```
+Or you can open Visual Studio 2022, choose there that you want to work with the project from github, insert this link there https://github.com/BioMihanoid/RussianHub , apply the following migrations to the package manager console and run the project.
+```
+add-migration -context VideoContest YourNameMigration
+update-database -context VideoContext
+add-migration -context ActorContext YourNameMigration
+update-database -context ActorContext
+add-migration -context CommentContest YourNameMigration
+update-database -context CommentContest
+```
 
 ## Technologies in this project
 * C# 6.0
