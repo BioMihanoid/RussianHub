@@ -23,7 +23,7 @@ add-migration -context CommentContest YourNameMigration
 update-database -context CommentContest
 dotnet run
 ```
-Or you can open Visual Studio 2022, choose there that you want to work with the project from github, insert this link there https://github.com/BioMihanoid/RussianHub , apply the following migrations to the package manager console and run the project.
+Or you can open Visual Studio 2022/Rider, choose there that you want to work with the project from github, insert this link there https://github.com/BioMihanoid/RussianHub , apply the following migrations to the package manager console and run the project.
 ```
 add-migration -context VideoContest YourNameMigration
 update-database -context VideoContext
