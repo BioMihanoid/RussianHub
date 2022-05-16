@@ -33,6 +33,11 @@ add-migration -context CommentContest YourNameMigration
 update-database -context CommentContest
 ```
 
+P.S. I didn't write about migration for the user above, but when you create the page itself will offer to apply it, agree and then everything will work for you. In order to fully enjoy the work of the site, you need to register a user and log in to his account. After you log in, you will have access to the admin panel, where you can fill the site with content and see its functionality after.
+
+P.P.S. You must have MS(SQL Server Management Studio) installed. Follow the link below to see how to do it and where to download it.
+https://docs.microsoft.com/ru-ru/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15
+
 ## Technologies in this project
 * C# 6.0
 * ASP.NET MVC 5
