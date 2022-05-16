@@ -15,21 +15,15 @@ The startup algorithm is something like this (if you are working in the console)
 ```
 git clone https://github.com/BioMihanoid/RussianHub
 cd  RussianHub
-add-migration -context VideoContest YourNameMigration
 update-database -context VideoContext
-add-migration -context ActorContext YourNameMigration
 update-database -context ActorContext
-add-migration -context CommentContest YourNameMigration
 update-database -context CommentContest
 dotnet run
 ```
 Or you can open Visual Studio 2022/Rider, choose there that you want to work with the project from github, insert this link there https://github.com/BioMihanoid/RussianHub , apply the following migrations to the package manager console and run the project.
 ```
-add-migration -context VideoContest YourNameMigration
 update-database -context VideoContext
-add-migration -context ActorContext YourNameMigration
 update-database -context ActorContext
-add-migration -context CommentContest YourNameMigration
 update-database -context CommentContest
 ```
 
@@ -48,7 +42,18 @@ https://docs.microsoft.com/ru-ru/sql/ssms/download-sql-server-management-studio-
 
 ## Project plans
 
-update required
+- [ ] Add comments to the video (from the user or from the guest)
+- [ ] Add age verification at registration
+- [ ] Add confirmation by email account
+- [ ] Make an admin panel only for admins
+- [ ] Add a rating
+- [ ] Add country and gender to models
+- [ ] Make a section with a blog
+- [ ] Make a section with gifs
+- [ ] Make a feedback form
+- [ ] Solve the problem with the duration of the video
+- [ ] Add all sorts of videos by rating and dates
+- [ ] Write all sorts of models
 
 ## Authors
 * **Mikhail Pechnikov** - *Backend* - [BioMihanoid](https://github.com/BioMihanoid)
