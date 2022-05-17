@@ -1,6 +1,8 @@
 ﻿@model RussianHub.Models.Video
 @{
     ViewData["Title"] = "Video";
+    if (Model == null || Model.Genres == null)
+        return;
     string[] genre = Model.Genres.Split('/');
     string[] actor = null;
     if (Model.Actors != null)
@@ -154,14 +156,15 @@
                                 или оставьте так:
                             </div>
 
-                            <form class="video_form" method="post" action="#">
+                            <form class="video_form" method="post" action="AddComment">
                                 <div>
                                     <textarea class="comment_area" tabindex="1" name="text" id=> </textarea>
                                 </div>
 
                                 <div>
-                                    <input class="input" tabindex="2" type="text" name="Username" placeholder="Ваше имя" />
-                                    <button class="input_submit" tabindex="3" type="submit"> Отправить</button>
+                                    <input class="input" tabindex="2" type="text" name="username" placeholder="Ваше имя" />
+                                    <input type="submit" value="Отправить"/>
+                                   
                                 </div>
                             </form>
 
