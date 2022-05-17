@@ -28,6 +28,7 @@ $(function () {
 $(function () {
     $('.burger').click(function (event) {
         $('.burger, .log, .home, .hidden_category, .Navbar').toggleClass('active');
+        $('.Category, .Navbar-nav-top_menu, .form, .content-container, .log').toggleClass('visible');
     });
 });
 

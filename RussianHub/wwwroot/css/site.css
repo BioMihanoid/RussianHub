@@ -462,6 +462,10 @@ h1 {
         text-align: left;
     }
 
+    .Category li a {
+        display: block;
+        width: 100%;
+    }
 
 a {
     color: #d8d8d8;
@@ -922,11 +926,13 @@ input {
 
 @media (max-width: 1183px) {
 
-
     .Category {
-        display: inline-block;
-        margin: 0 auto;
+        padding-bottom: 10px;
     }
+
+        .Category ul {
+            margin-bottom: 0px;
+        }
 
         .Category li {
             display: inline-block;
@@ -969,8 +975,8 @@ input {
             top: 12px;
         }
 
-    .log.active {
-        display: block;
+    .log {
+        display: none;
         position: absolute;
         top: 12px;
         right: 1px;
@@ -978,11 +984,12 @@ input {
         width: 100%;
         border-bottom: 1px solid #f4792e;
         padding-bottom: 10px;
+        margin: 0;
     }
 
-    .log {
-        display: none;
-    }
+        .log.active {
+            display: block;
+        }
 
     .Navbar.active {
         margin-top: 35px
@@ -1046,18 +1053,26 @@ input {
 
 @media (max-width: 805px) {
 
+    .Category {
+        display: none;
+    }
 
-    .main_container {
+        .Category.hidden_menu {
+            display: flex;
+            border-bottom: 1px solid #f4792e;
+        }
+
+    .main_container { /*????*/
         position: relative;
     }
 
-    header {
+    header { /*????*/
         position: relative;
     }
 
-    .Navbar {
-        margin-top: 0px;
-        padding-bottom: 0;
+
+    .Navbar-nav form {
+        margin-right: 25px;
     }
 
     .hidden_category.active {
@@ -1114,43 +1129,9 @@ input {
         margin-top: 0;
     }
 
-    .Navbar-nav form {
-        margin-right: 25px;
-    }
 
-    .Category {
-        display: block;
-        background-color: #1a1a1a;
-        width: auto;
-        height: 100%;
-        width: 100%;
-        position: fixed;
-        z-index: 2;
-        top: -100%;
-        padding-top: 164px !important;
-        padding-right: 10px;
-    }
 
-        .Category li {
-            display: block;
-            font-size: 20px;
-            text-overflow: inherit;
-            margin-bottom: 10px;
-            overflow: inherit;
-        }
-
-        .Category.hidden_menu {
-            top: 0px;
-            transition: all 0.5s ease 0s;
-        }
-
-    .Navbar {
-        position: relative;
-        z-index: 10;
-        background-color: black;
-    }
-
-    .content-container {
+    .content-container { /*Лишнее*/
         border-top: none;
         padding: 0;
         width: 100%;
@@ -1163,14 +1144,13 @@ input {
     .short_description {
         display: none;
     }
-
-    .Navbar {
-        position: relative;
-        z-index: 3;
-    }
 }
 
 @media (max-width: 758px) {
+
+    .Navbar {
+        padding-bottom: 0px;
+    }
 
     .model_block {
         max-width: 47%;
@@ -1184,7 +1164,8 @@ input {
         display: block;
         border-bottom: 1px solid #f4792e;
         margin-top: 10px;
-        padding: 10px;
+        padding: 20px;
+        text-align: center;
     }
 
         .Navbar-nav form {
@@ -1212,6 +1193,154 @@ input {
 
 @media (max-width: 572px) {
 
+    .burger.active {
+        top: 44px;
+    }
+
+    .home.active {
+        margin-top: 0px;
+    }
+
+    .log {
+        display: block;
+        opacity: 0;
+        pointer-events: none;
+        cursor: default;
+        transition: all 0.5s ease 0s;
+        position: absolute;
+        text-align: center;
+        width: auto;
+        border-bottom: none;
+        padding: 10px;
+        right: 0;
+        top: 166px;
+        background-color: #1a1a1a;
+        width: 200px;
+        padding: 0;
+        margin: 0;
+        border-left: 2px solid #f4792e;
+    }
+
+        .log a {
+            display: block;
+            padding: 10px 0;
+            font-size: 15px;
+            color: orange;
+        }
+
+            .log a:hover {
+                text-decoration: underline;
+            }
+
+        .log.visible {
+            opacity: 1;
+            transition: all 0.5s ease 0s;
+            pointer-events: all;
+        }
+
+    .Category {
+        display: block;
+        opacity: 0;
+        pointer-events: none;
+        cursor: default;
+        transition: all 0.5s ease 0s;
+        background-color: #3b3939;
+        padding: 0;
+        width: auto;
+        height: auto;
+        width: 200px;
+        position: absolute;
+        right: 0px;
+        top: 305px;
+        z-index: 2;
+        padding: 0 !important;
+        border-left: 2px solid #f4792e;
+        border-bottom: 2px solid #f4792e;
+    }
+
+        .Category a {
+            width: 100%;
+            color: orange;
+        }
+
+            .Category a:hover {
+                text-decoration: underline;
+            }
+
+        .Category ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .Category li {
+            display: block;
+            font-size: 15px;
+            text-overflow: inherit;
+            margin: 0px !important;
+            overflow: inherit;
+        }
+
+        .Category li {
+            margin: 7px !important;
+        }
+
+        .Category.hidden_menu {
+            position: absolute;
+            left: 0px;
+            transition: all 0.5s ease 0s;
+            color: orange;
+        }
+
+        .Category.visible {
+            opacity: 1;
+            transition: all 0.5s ease 0s;
+            pointer-events: all;
+        }
+
+    .Navbar {
+        position: relative;
+        z-index: 10;
+        background-color: black;
+        padding-bottom: 0px;
+    }
+
+    .Navbar-nav form {
+        display: flex;
+        opacity: 0;
+        transition: all 0.5s ease 0s;
+        pointer-events: none;
+        cursor: default;
+        position: absolute;
+        top: 117px;
+        left: 10px;
+    }
+
+        .Navbar-nav form.visible {
+            opacity: 1;
+            transition: all 0.5s ease 0s;
+            pointer-events: all;
+        }
+
+    .Navbar-nav-top_menu {
+        transition: all 0.5s ease 0s;
+    }
+
+        .Navbar-nav-top_menu.visible {
+            opacity: 0;
+            transition: all 0.5s ease 0s;
+            pointer-events: none;
+            cursor: default;
+        }
+
+    .text_area input {
+        width: 300px;
+    }
+
+    .content-container.visible {
+        opacity: 0.5;
+        transition: all 0.5s ease 0s;
+    }
+
     .content-container h1 {
         display: none;
     }
@@ -1221,7 +1350,7 @@ input {
     }
 
     .filtration {
-        position: relative;
+        position: inherit;
         justify-content: space-around;
     }
 
