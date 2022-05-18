@@ -43,7 +43,7 @@ https://docs.microsoft.com/ru-ru/sql/ssms/download-sql-server-management-studio-
 ## Project plans
 
 - [ ] Add comments to the video (from the user or from the guest)
-- [ ] Add age verification at registration
+- [X] ~~Add age verification at registration~~
 - [ ] Add confirmation by email account
 - [ ] Make an admin panel only for admins
 - [ ] Add a rating
