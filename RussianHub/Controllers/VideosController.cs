@@ -7,7 +7,7 @@ using Xabe.FFmpeg;
 
 namespace RussianHub.Controllers
 {
-    
+    [Controller]
     public class VideosController : Controller
     {
         private readonly VideoContext _context;
@@ -149,20 +149,29 @@ namespace RussianHub.Controllers
             return _context.Video.Any(e => e.Id == id);
         }
 
-        [Route("Home/Video/AddComment")]
+        [Route("Home/Video/{id?}")]
         [HttpPost]
         public async Task<IActionResult> AddComment()
         {
+            Console.WriteLine("\nTYT -" + HttpContext.Request.HttpContext.Request.Path.Value);
+            Guid video;
+            {
+                string str = HttpContext.Request.HttpContext.Request.Path.Value;
+                str = str.Substring(str.Length - "d2ae069c-a202-4a25-9618-267c2168c08b".Length);
+                video = Guid.Parse(str);  
+            }
             Comment comment = new Comment();
             comment.Content = Request.Form.FirstOrDefault(p => p.Key == "text").Value;
             comment.Id = Guid.NewGuid();
             comment.Name = Request.Form.FirstOrDefault(p => p.Key == "username").Value;
+            //TODO если юзер авторизован, то в это иф не заходим
+            if (true)
+                comment.Name += " (Гость)";
             comment.LinkPhotoProfile = null;
-            comment.VideoId = Guid.Parse("d2ae069c-a202-4a25-9618-267c2168c08b");
+            comment.VideoId = video;
             _context.Comment.Add(comment);
             await _context.SaveChangesAsync(true);
-            return View();
+            return RedirectToAction();
         }
-
     }
 }
