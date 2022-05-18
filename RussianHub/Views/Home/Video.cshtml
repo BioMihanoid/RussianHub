@@ -15,170 +15,168 @@
     <title>Embedded Video Example</title>
 </head>
 <body>
-    <div class="wrap__content">
-        @await Component.InvokeAsync("CategoryList")
-        <div class="content-container">
-            <div class="main_container">
-                <div class="container-block">
-                    <div class="video-block">
-                        <video id="my_video_1" class="video-js vjs-default-skin" width=100% height="551px"
-                               controls preload="none" poster='http://video-js.zencoder.com/oceans-clip.jpg'
-                               data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
-                            <source src="@Model.Link" type='video/mp4' />
-                            <source src="@Model.Link" type='video/webm' />
-                        </video>
-                        <div class="video-data">
+    <div class="main_container">
+        <div class="container-block">
+            <div class="video-block">
+                <video id="my_video_1" class="video-js vjs-default-skin" width=100% height="551px"
+                       controls preload="none" poster='http://video-js.zencoder.com/oceans-clip.jpg'
+                       data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+                    <source src="@Model.Link" type='video/mp4' />
+                    <source src="@Model.Link" type='video/webm' />
+                </video>
+                <div class="video-data">
 
-                            <div class="description">
-                                <h1>@Model.Name</h1>
+                    <div class="description">
+                        <h1>@Model.Name</h1>
+                    </div>
+
+                    <div class="video_favs">
+                        <div class="video_likes">
+                            999
+                        </div>
+                        <div class="add_favorite">
+                            <img src="/img/like_fav.png" height="30px" width="32px" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class=video-additions>
+                    <div class="kek">
+                        <div class="download">
+                            <img src="/img/skachat.png" height="17px" width="22px" />
+                            Cкачать
+                        </div>
+                        <div class="views">
+                            <div>
+                                Просмотров:
                             </div>
-
-                            <div class="video_favs">
-                                <div class="video_likes">
-                                    999
-                                </div>
-                                <div class="add_favorite">
-                                    <img src="/img/like_fav.png" height="30px" width="32px" />
-                                </div>
+                            <div class="view-count">
+                                @Model.CountViews
                             </div>
 
                         </div>
-                        <div class=video-additions>
-                            <div class="kek">
-                                <div class="download">
-                                    <img src="/img/skachat.png" height="17px" width="22px" />
-                                    Cкачать
-                                </div>
-                                <div class="views">
-                                    <div>
-                                        Просмотров:
-                                    </div>
-                                    <div class="view-count">
-                                        @Model.CountViews
-                                    </div>
-
-                                </div>
+                    </div>
+                    <div class="grade">
+                        <div class="like">
+                            <img src="/img/laik.png" height="35px" width="40px" />
+                        </div>
+                        <div class="rating_score">
+                            <div class="percent">
+                                100%
                             </div>
-                            <div class="grade">
-                                <div class="like">
-                                    <img src="/img/laik.png" height="35px" width="40px" />
-                                </div>
-                                <div class="rating_score">
-                                    <div class="percent">
-                                        100%
-                                    </div>
-                                    <div class="vote">
-                                        Голосов:100
-                                    </div>
-                                </div>
-                                <div class="dislike">
-                                    <img src="/img/dislaik.png" height="35px" width="40px" />
-                                </div>
+                            <div class="vote">
+                                Голосов:100
                             </div>
-                            <p>
-                                Категории:
-                                @for (i = 0; i < genre.Length; i++)
-                                {
-                                    <span class="category_title">
-                                        <a asp-controller="Home" asp-action="Index" asp-route-serachElm="@genre[i]">@genre[i]</a>
-                                    </span>
-                                }
-                            </p>
-                            <p>
-                                Модели:
-                                @if (actor != null)
-                                {
-                                    @for (i = 0; i < actor.Length; i++)
-                                    {
-                                        <span class="category_title">
-                                            <a asp-controller="Home" asp-action="Index" asp-route-serachElm="@actor[i]">@actor[i]</a>
-                                        </span>
-
-                                    }
-                                    <div class="do_u_know category_title">
-                                        <a>Знаете модель из видео?</a>
-                                    </div>
-                                }
-                                else
-                                {
-                                    <a href="">Знаете модель из видео?</a>
-                                }
-                            </p>
-                            @if (Model.Description != null)
+                        </div>
+                        <div class="dislike">
+                            <img src="/img/dislaik.png" height="35px" width="40px" />
+                        </div>
+                    </div>
+                    <p>
+                        Категории:
+                        @for (i = 0; i < genre.Length; i++)
+                        {
+                            <span class="category_title">
+                                <a asp-controller="Home" asp-action="Index" asp-route-serachElm="@genre[i]">@genre[i]</a>
+                            </span>
+                        }
+                    </p>
+                    <p>
+                        Модели:
+                        @if (actor != null)
+                        {
+                            @for (i = 0; i < actor.Length; i++)
                             {
-                                <div>@Model.Description</div>
+                                <span class="category_title">
+                                    <a asp-controller="Home" asp-action="Index" asp-route-serachElm="@actor[i]">@actor[i]</a>
+                                </span>
+
                             }
-                        </div>
-                        <div class="video-comments">
-                            <p> Комментарии</p>
-                            <div class="comment">
-                                <div class="comment-user comment_style">
-                                    <div class="comment-user_name">
-                                        Андрей
-                                    </div>
-                                    <div class="comment-user_photo">
-                                        <img src="/Img/anonim.jpg" height="100px" width="90px" />
-                                    </div>
+                            <div class="do_u_know category_title">
+                                <a>Знаете модель из видео?</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <a href="">Знаете модель из видео?</a>
+                        }
+                    </p>
+                    @if (Model.Description != null)
+                    {
+                        <div>@Model.Description</div>
+                    }
+                </div>
+                <div class="video-comments">
+                    <p> Комментарии</p>
+                    @foreach (var com in Model.Comments)
+                    {
+                        <div class="comment">
+                            <div class="comment-user comment_style">
+                                <div class="comment-user_name">
+                                    @com.Name
                                 </div>
-                                <div class="comment-message comment_style">
-                                    <div class="comment_time">
-                                        1 Апр 2022 в 2:55
-                                    </div>
-                                    <div class="comment_text">
-                                        ЕЙ ЖЕ БЛЯТЬ 14 АЛО хотя одобряю
-                                    </div>
-                                    <div class="comment_down">
-                                        <div class="comment_reply">
-                                            Ответить
+                                <div class="comment-user_photo">
+                                    <img src="/Img/anonim.jpg" height="100px" width="90px" />
+                                </div>
+                            </div>
+                            <div class="comment-message comment_style">
+                                <div class="comment_time">
+                                    1 Апр 2022 в 2:55
+                                </div>
+                                <div class="comment_text">
+                                    @com.Content
+                                </div>
+                                <div class="comment_down">
+                                    <div class="comment_reply">
+                                        Ответить
 
+                                    </div>
+                                    <div class="comment_rate">
+                                        <div class="comment_like">
+                                            <img src="/img/laik.png" height="15px" width="20px" />
                                         </div>
-                                        <div class="comment_rate">
-                                            <div class="comment_like">
-                                                <img src="/img/laik.png" height="15px" width="20px" />
-                                            </div>
-                                            <div class="comment-grade">
-                                                3
-                                            </div>
-                                            <div class="comment_dislike">
-                                                <img src="/img/dislaik.png" height="15px" width="20px" />
-                                            </div>
+                                        <div class="comment-grade">
+                                            3
+                                        </div>
+                                        <div class="comment_dislike">
+                                            <img src="/img/dislaik.png" height="15px" width="20px" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="helper">
-                                Чтобы оставить комментарий
-
-                                <a asp-area="Identity" asp-page="/Account/Login" class="to_log"> войдите</a>
-                                или
-                                <a asp-area="Identity" asp-page="/Account/Register" class="to_log">зарегистрируйтесь</a>
-                                или оставьте так:
-                            </div>
-
-                            <form class="video_form" method="post" action="">
-                                <div>
-                                    <textarea class="comment_area" tabindex="1" type="text" name="text" id=> </textarea>
-                                </div>
-
-                                <div>
-                                    <input class="input" tabindex="2" type="text" name="username" placeholder="Ваше имя" />
-                                    <input type="submit" value="Отправить"/>
-                                   
-                                </div>
-                            </form>
-
                         </div>
+                    }
+
+                    <div class="helper">
+                        Чтобы оставить комментарий
+
+                        <a asp-area="Identity" asp-page="/Account/Login" class="to_log"> войдите</a>
+                        или
+                        <a asp-area="Identity" asp-page="/Account/Register" class="to_log">зарегистрируйтесь</a>
+                        или оставьте так:
                     </div>
 
-                    <div class="other-video">
-                        <div class="similar_video">
-                            Другие видео
+                    <form class="video_form" method="post" action="">
+                        <div>
+                            <textarea class="comment_area" tabindex="1" type="text" name="text" id=> </textarea>
                         </div>
-                        <div class="content-item">
-                            @await Component.InvokeAsync("RealatedVideo", @Model.Id)
+
+                        <div>
+                            <input class="input" tabindex="2" type="text" name="username" placeholder="Ваше имя" />
+                            <input type="submit" value="Отправить" />
+
                         </div>
-                    </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="other-video">
+                <div class="similar_video">
+                    Другие видео
+                </div>
+                <div class="content-item">
+                    @await Component.InvokeAsync("RealatedVideo", @Model.Id)
                 </div>
             </div>
         </div>

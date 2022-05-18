@@ -6,87 +6,83 @@
 
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
-<div class="wrap__content">
-    @await Component.InvokeAsync("CategoryList")
 
-    <div class="content-container">
-        <h1> Порно видео онлайн!</h1>
-        <div class="filtration">
-            <div class="filtration__button button_style">
-                 <a asp-controller="Home" asp-action="Index" asp-route-serachElm="NewVideo">Новые</a>
+
+<h1> Порно видео онлайн!</h1>
+<div class="filtration">
+    <div class="filtration__button button_style">
+        <a asp-controller="Home" asp-action="Index" asp-route-serachElm="NewVideo">Новые</a>
+    </div>
+    <div class="filtration__button button_style hidden_sort_top">
+        <a asp-controller="Home" asp-action="Index" asp-route-serachElm="TopRating">Топ рейтинга</a>
+        <div class="hidden_sort_time" id="sort_id_1">
+            <div>
+                Неделю
             </div>
-            <div class="filtration__button button_style hidden_sort_top">
-                <a asp-controller="Home" asp-action="Index" asp-route-serachElm="TopRating">Топ рейтинга</a>
-                <div class="hidden_sort_time" id="sort_id_1">
-                    <div>
-                        Неделю
-                    </div>
-                    <div>
-                        Месяц
-                    </div>
-                    <div>
-                        Год
-                    </div>
-                    <div>
-                        Всё время
-                    </div>
-                </div>
+            <div>
+                Месяц
             </div>
-            <div class="filtration__button button_style hidden_sort_view">
-                <a asp-controller="Home" asp-action="Index" asp-route-serachElm="TopView">Топ просмотров</a>
-                <div class="hidden_sort_time" id="sort_id_2">
-                    <div>
-                        Неделю
-                    </div>
-                    <div>
-                        Месяц
-                    </div>
-                    <div>
-                        Год
-                    </div>
-                    <div>
-                        Всё время
-                    </div>
-                </div>
+            <div>
+                Год
             </div>
-        </div>
-        <div class="slide-title">
-            <div class="short_description"> Добро пожаловать на RussianHub, наша команда профессионалов каждый день старается для Вас! Ранним утром, когда все ещё нежатся под одеялом и наслаждаются снами мы занимаемся поиском лучшего порно на бескрайних просторах интернета, чтобы к Вашему пробуждению вы смогли наслаждаться только самыми свежими и отборными секс HD видео!</div>
-        </div>
-        <div class="content-item">
-            @foreach (var obj in Model)
-            {
-                <div class="video_block">
-                    <a asp-controller="Home" asp-action="Video" asp-route-id="@obj.Id">
-                        <img class="video_img" src="@obj.LinkPreview" />
-                        <div class="about_video">
-                            @obj.Name
-                        </div>
-                    </a>
-                    <div class="right_top_mini_block">
-                        <div class="video_mini_rating">
-                            <img class="" src="/img/like_video.png" width="33px" height="33px" />
-                        </div>
-                        <div class="video_percent">
-                            98%
-                        </div>
-                    </div>
-                    <div class="video_fav_add">
-                        <img class="video_fav_add" src="/img/like_fav.png" width="28px" height="28px" />
-                    </div>
-                    <div class="right_bot_mini_block">
-                        <div class="video_view">
-                            <img class="video_view" src="/img/view_5.png" width="31px" height="28px" />
-                        </div>
-                        <div class="video_count">
-                            @obj.CountViews
-                        </div>
-                    </div>
-                    <div class="video_duration">
-                        30:30
-                    </div>
-                </div>
-            }
+            <div>
+                Всё время
+            </div>
         </div>
     </div>
+    <div class="filtration__button button_style hidden_sort_view">
+        <a asp-controller="Home" asp-action="Index" asp-route-serachElm="TopView">Топ просмотров</a>
+        <div class="hidden_sort_time" id="sort_id_2">
+            <div>
+                Неделю
+            </div>
+            <div>
+                Месяц
+            </div>
+            <div>
+                Год
+            </div>
+            <div>
+                Всё время
+            </div>
+        </div>
+    </div>
+</div>
+<div class="slide-title">
+    <div class="short_description"> Добро пожаловать на RussianHub, наша команда профессионалов каждый день старается для Вас! Ранним утром, когда все ещё нежатся под одеялом и наслаждаются снами мы занимаемся поиском лучшего порно на бескрайних просторах интернета, чтобы к Вашему пробуждению вы смогли наслаждаться только самыми свежими и отборными секс HD видео!</div>
+</div>
+<div class="content-item">
+    @foreach (var obj in Model)
+    {
+        <div class="video_block">
+            <a asp-controller="Home" asp-action="Video" asp-route-id="@obj.Id">
+                <img class="video_img" src="@obj.LinkPreview" />
+                <div class="about_video">
+                    @obj.Name
+                </div>
+            </a>
+            <div class="right_top_mini_block">
+                <div class="video_mini_rating">
+                    <img class="" src="/img/like_video.png" width="33px" height="33px" />
+                </div>
+                <div class="video_percent">
+                    98%
+                </div>
+            </div>
+            <div class="video_fav_add">
+                <img class="video_fav_add" src="/img/like_fav.png" width="28px" height="28px" />
+            </div>
+            <div class="right_bot_mini_block">
+                <div class="video_view">
+                    <img class="video_view" src="/img/view_5.png" width="31px" height="28px" />
+                </div>
+                <div class="video_count">
+                    @obj.CountViews
+                </div>
+            </div>
+            <div class="video_duration">
+                30:30
+            </div>
+        </div>
+    }
 </div>

@@ -97,6 +97,9 @@ namespace RussianHub.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+            [Required(ErrorMessage = "You must be over 18 years old!")]
+            [Range(typeof(bool), "true", "true")]
+            public bool Age { get; set; }
         }
 
 
@@ -110,7 +113,7 @@ namespace RussianHub.Areas.Identity.Pages.Account
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && Input.Age)
             {
                 var user = CreateUser();
 
@@ -149,7 +152,10 @@ namespace RussianHub.Areas.Identity.Pages.Account
                     ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
+            if (!Input.Age)
+            {
 
+            }
             // If we got this far, something failed, redisplay form
             return Page();
         }

@@ -4,7 +4,8 @@
     ViewData["Title"] = "Регистрация";
 }
 
-<h1>@ViewData["Title"]</h1>
+
+
 
 <div class="row">
     <div class="col-md-4">
@@ -27,6 +28,13 @@
                 <label asp-for="Input.ConfirmPassword"></label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
+            <br />
+            <div class="form-floating">
+                Вам есть 18 лет?
+                <input type="checkbox" asp-for="Input.Age" autocomplete="age" aria-required="true" />
+                <span asp-validation-for="Input.Age" class="text-danger"></span>
+            </div>
+            <br />
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Зарегистрироваться</button>
         </form>
     </div>
@@ -40,7 +48,8 @@
                     <div>
                         <p>
                             Внешние службы аутентификации не настроены. Смотрите это <a href="https://go.microsoft.com/fwlink/?LinkID=532715">
-                            Смотрите это статья о настройке этого ASP.NET приложение для поддержки входа в систему через внешние службы.</a>.
+                                Смотрите это статья о настройке этого ASP.NET приложение для поддержки входа в систему через внешние службы.
+                            </a>.
                         </p>
                     </div>
                 }
@@ -63,5 +72,5 @@
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+<partial name="_ValidationScriptsPartial" />
 }
