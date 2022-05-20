@@ -12,9 +12,9 @@ namespace RussianHub.Controllers
 {
     public class CommentsController : Controller
     {
-        private readonly CommentContext _context;
+        private readonly RussianHubContext _context;
 
-        public CommentsController(CommentContext context)
+        public CommentsController(RussianHubContext context)
         {
             _context = context;
         }

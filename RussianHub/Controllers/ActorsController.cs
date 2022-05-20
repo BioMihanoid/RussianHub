@@ -12,9 +12,9 @@ namespace RussianHub.Controllers
 {
     public class ActorsController : Controller
     {
-        private readonly ActorContext _context;
+        private readonly RussianHubContext _context;
 
-        public ActorsController(ActorContext context)
+        public ActorsController(RussianHubContext context)
         {
             _context = context;
         }

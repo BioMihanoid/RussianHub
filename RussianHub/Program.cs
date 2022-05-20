@@ -5,15 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<CommentContext>(options =>
-
-    options.UseSqlServer(builder.Configuration.GetConnectionString("CommentContext") ?? throw new InvalidOperationException("Connection string 'CommentContext' not found.")));
-
-builder.Services.AddDbContext<ActorContext>(options =>
-
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ActorContext") ?? throw new InvalidOperationException("Connection string 'ActorContext' not found.")));
-
-builder.Services.AddDbContext<VideoContext>(options =>
+builder.Services.AddDbContext<RussianHubContext>(options =>
 
     options.UseSqlServer(builder.Configuration.GetConnectionString("VIdeoContext") ?? throw new InvalidOperationException("Connection string 'VIdeoContext' not found.")));
 var config = builder.Configuration;

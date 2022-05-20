@@ -10,7 +10,7 @@ using RussianHub.Data;
 
 namespace RussianHub.Migrations.Comment
 {
-    [DbContext(typeof(CommentContext))]
+    [DbContext(typeof(RussianHubContext))]
     partial class CommentContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

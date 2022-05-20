@@ -10,18 +10,16 @@ namespace RussianHub.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly VideoContext _videoContext;
-        private readonly ActorContext _actorContext;
-        public HomeController(ILogger<HomeController> logger, VideoContext videoContext, ActorContext actorContext)
+        private readonly RussianHubContext _context;
+        public HomeController(ILogger<HomeController> logger, RussianHubContext videoContext)
         {
             _logger = logger;
-            _videoContext = videoContext;
-            _actorContext = actorContext;
+            _context = videoContext;
         }
 
         public async Task<IActionResult> Index(string serachElm)
         {
-            var videoList = await _videoContext.Video.ToListAsync();
+            var videoList = await _context.Video.ToListAsync();
             if (serachElm != null)
             {
                 if (serachElm == "TopView")
@@ -71,8 +69,8 @@ namespace RussianHub.Controllers
 
         public IActionResult Models(string searchModel)
         {
-            var videoList = _videoContext.Video.ToList();
-            var modelList = _actorContext.Actor.ToList();
+            var videoList = _context.Video.ToList();
+            var modelList = _context.Actor.ToList();
             foreach (var model in modelList)
             {
                 model.CountVideos = 0;
@@ -88,8 +86,8 @@ namespace RussianHub.Controllers
                             if (actor[i].ToLower().Contains(model.Name.ToLower()))
                             {
                                 model.CountVideos++;
-                                _actorContext.Update(model);
-                                _actorContext.SaveChanges();
+                                _context.Update(model);
+                                _context.SaveChanges();
                             }
                         }
                     }
@@ -133,15 +131,15 @@ namespace RussianHub.Controllers
 
         public IActionResult Video(Guid id)
         {
-            var videoList = _videoContext.Video.ToList();
+            var videoList = _context.Video.ToList();
             Video video = new Video();
             foreach (var obj in videoList)
             {
                 if (obj.Id == id)
                 {
                     obj.CountViews++;
-                    _videoContext.Update(obj);
-                    _videoContext.SaveChanges();
+                    _context.Update(obj);
+                    _context.SaveChanges();
                     video = obj;
                     break;
                 }

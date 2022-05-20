@@ -5,9 +5,9 @@ namespace RussianHub.Views.VeiwComponents
 {
     public class CategoryListViewComponent : ViewComponent
     {
-        private readonly VideoContext _videoDataBase;
+        private readonly RussianHubContext _videoDataBase;
 
-        public CategoryListViewComponent (VideoContext videoDataBase)
+        public CategoryListViewComponent (RussianHubContext videoDataBase)
         {
             _videoDataBase = videoDataBase;
         }

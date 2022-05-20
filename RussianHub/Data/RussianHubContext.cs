@@ -8,14 +8,15 @@ using RussianHub.Models;
 
 namespace RussianHub.Data
 {
-    public class VideoContext : DbContext
+    public class RussianHubContext : DbContext
     {
-        public VideoContext (DbContextOptions<VideoContext> options)
+        public RussianHubContext (DbContextOptions<RussianHubContext> options)
             : base(options)
         {
         }
 
         public DbSet<RussianHub.Models.Video> Video { get; set; }
         public DbSet<RussianHub.Models.Comment> Comment { get; set; }
+        public DbSet<RussianHub.Models.Actor> Actor { get; set; }
     }
 }

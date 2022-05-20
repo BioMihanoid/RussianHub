@@ -11,7 +11,7 @@ using RussianHub.Data;
 
 namespace RussianHub.Migrations.Comment
 {
-    [DbContext(typeof(CommentContext))]
+    [DbContext(typeof(RussianHubContext))]
     [Migration("20220515185736_Comment_M")]
     partial class Comment_M
     {

@@ -11,7 +11,7 @@ using RussianHub.Data;
 
 namespace RussianHub.Migrations.Actor
 {
-    [DbContext(typeof(ActorContext))]
+    [DbContext(typeof(RussianHubContext))]
     [Migration("20220512113032_ActorMigration1")]
     partial class ActorMigration1
     {

@@ -10,7 +10,7 @@ using RussianHub.Data;
 
 namespace RussianHub.Migrations.Actor
 {
-    [DbContext(typeof(ActorContext))]
+    [DbContext(typeof(RussianHubContext))]
     partial class ActorContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

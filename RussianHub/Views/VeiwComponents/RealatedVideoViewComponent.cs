@@ -5,9 +5,9 @@ namespace RussianHub.Views.VeiwComponents
 {
     public class RealatedVideoViewComponent : ViewComponent
     {
-        private readonly VideoContext _videoDataBase;
+        private readonly RussianHubContext _videoDataBase;
 
-        public RealatedVideoViewComponent(VideoContext videoDataBase)
+        public RealatedVideoViewComponent(RussianHubContext videoDataBase)
         {
             _videoDataBase = videoDataBase;
         }

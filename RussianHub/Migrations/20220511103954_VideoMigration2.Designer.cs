@@ -11,7 +11,7 @@ using RussianHub.Data;
 
 namespace RussianHub.Migrations
 {
-    [DbContext(typeof(VideoContext))]
+    [DbContext(typeof(RussianHubContext))]
     [Migration("20220511103954_VideoMigration2")]
     partial class VideoMigration2
     {

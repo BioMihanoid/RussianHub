@@ -5,14 +5,15 @@ using RussianHub.Data;
 using RussianHub.Models;
 using Xabe.FFmpeg;
 
+
 namespace RussianHub.Controllers
 {
     [Controller]
     public class VideosController : Controller
     {
-        private readonly VideoContext _context;
+        private readonly RussianHubContext _context;
 
-        public VideosController(VideoContext context)
+        public VideosController(RussianHubContext context)
         {
             _context = context;
         }
@@ -172,6 +173,13 @@ namespace RussianHub.Controllers
             _context.Comment.Add(comment);
             await _context.SaveChangesAsync(true);
             return RedirectToAction();
+        }
+
+        public static void QwaTest(Comment video)
+        {
+
+            Console.WriteLine();
+            Console.WriteLine(video);
         }
     }
 }
