@@ -1,6 +1,4 @@
-<div align="center">
-  <h1> RussianHub </h1>
-</div>
+# RussianHub
 
 ## Description
 **Russian hub** is similar to PornHub, but Russian. Unlike PornHub, our hub is open source and created for all comrades around the world. Let's provide every home with a high-quality porn service! Hurray!
