@@ -181,6 +181,10 @@ namespace RussianHub.Controllers
             comment.VideoId = video;
             _context.Comment.Add(comment);
             await _context.SaveChangesAsync(true);
+            var tVideo = await _context.Video.Include(p => p.Comments).SingleAsync(p => p.Id == video);
+            tVideo.CountViews--;
+            _context.Update(tVideo);
+            await _context.SaveChangesAsync();
             return RedirectToAction();
         }
 
