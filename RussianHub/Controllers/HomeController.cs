@@ -111,6 +111,25 @@ namespace RussianHub.Controllers
             {
                 return View(modelList);
             }
+            else if (paramsForModel == "New")
+            {
+                var res = from m in modelList
+                          orderby m.CreatedDate descending
+                          select m;
+                return View(res);
+            }
+            else if (paramsForModel == "CountVeiw")
+            {
+                var res = from m in modelList
+                          orderby m.CountVideos descending
+                          select m;
+                return View(res);
+            }
+            else if (paramsForModel == "Alpha")
+            {
+                var res = modelList.OrderBy(m => m.Name);
+                return View(res);
+            }
             else
             {
                 var res = from m in modelList

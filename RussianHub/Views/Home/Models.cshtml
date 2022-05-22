@@ -23,16 +23,17 @@
     <div class="div_sort">
         Сортировка:
         <div class="model_do_filter" id="sort_id_4">
-            Новые
+            <a asp-controller="Home" asp-action="Models" asp-route-paramsForModel="New">Новые</a>
             <div class="hidden_sort_value">
                 <div>
                     По популярности
+
                 </div>
                 <div>
-                    По количеству
+                    <a asp-controller="Home" asp-action="Models" asp-route-paramsForModel="CountVeiw">По количеству</a>
                 </div>
                 <div>
-                    По алфавиту
+                    <a asp-controller="Home" asp-action="Models" asp-route-paramsForModel="Alpha">По алфавиту</a>
                 </div>
             </div>
         </div>
