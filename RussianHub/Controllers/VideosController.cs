@@ -166,6 +166,7 @@ namespace RussianHub.Controllers
                 video = Guid.Parse(str);
             }
             Comment comment = new Comment();
+            comment.DataPublish = DateTime.Now;
             comment.Content = Request.Form.FirstOrDefault(p => p.Key == "text").Value;
             comment.Id = Guid.NewGuid();
             var user = await _userManager.GetUserAsync(User);

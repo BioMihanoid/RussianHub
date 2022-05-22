@@ -3,7 +3,7 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 @{
-    ViewData["Title"] = "Video";
+    ViewData["Title"] = "Видео";
     if (Model == null || Model.Genres == null)
         return;
     string[] genre = Model.Genres.Split('/');
