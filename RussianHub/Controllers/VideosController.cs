@@ -21,7 +21,8 @@ namespace RussianHub.Controllers
         // GET: Videos
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Video.ToListAsync());
+            var videos = _context.Video.Include(p => p.Comments);
+            return View( videos.ToList());
         }
 
         // GET: Videos/Details/5

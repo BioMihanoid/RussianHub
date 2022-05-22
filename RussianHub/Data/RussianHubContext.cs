@@ -10,6 +10,32 @@ namespace RussianHub.Data
 {
     public class RussianHubContext : DbContext
     {
+        /*
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Comment>()
+                .HasOne(p => p.Video)
+                .WithMany(b => b.Comments);
+        }
+        */
+        /*
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Comment>()
+                .HasOne(p => p.Video)
+                .WithMany(b => b.Comments)
+                .HasForeignKey(p => p.VideoId);
+        }
+        */
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Comment>()
+                .HasOne(p => p.Video)
+                .WithMany(b => b.Comments)
+                .HasForeignKey(p => p.VideoId);
+
+        }
         public RussianHubContext (DbContextOptions<RussianHubContext> options)
             : base(options)
         {

@@ -7,7 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<RussianHubContext>(options =>
 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("VIdeoContext") ?? throw new InvalidOperationException("Connection string 'VIdeoContext' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("VideoContext") 
+        ?? throw new InvalidOperationException("Connection string 'VideoContext' not found.")));
 var config = builder.Configuration;
 
 // Add services to the container.
@@ -20,19 +21,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddAuthentication()
-    .AddGoogle(options =>
-    {
-        IConfigurationSection googleAuthNSection =
-        config.GetSection("Authentication:Google");
-        options.ClientId = "300502537276-j7vrh5m39t5ni9a948m7qrvc8m4pk6vu.apps.googleusercontent.com";
-        options.ClientSecret = "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";
-    })
-    .AddMicrosoftAccount(microsoftOptions =>
-    {
-        microsoftOptions.ClientId = "88e303fd-6e9d-4029-8b3b-ec15ef6301c7";
-        microsoftOptions.ClientSecret = "e973778c-c920-4fb4-ba16-2a81c988c60b";
-    });
+builder.Services.AddAuthentication();
 
 var app = builder.Build();
 
