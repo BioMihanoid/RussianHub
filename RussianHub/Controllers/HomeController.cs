@@ -136,7 +136,7 @@ namespace RussianHub.Controllers
                 return NotFound();
             }
 
-            var video = await _context.Video.FindAsync(id);
+            var video = await _context.Video.Include(p => p.Comments).SingleAsync(p => p.Id == id);
             if (video == null)
             {
                 return NotFound();

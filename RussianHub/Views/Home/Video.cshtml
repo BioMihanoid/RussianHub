@@ -1,4 +1,7 @@
-﻿@model RussianHub.Models.Video
+﻿@using Microsoft.AspNetCore.Identity
+@model RussianHub.Models.Video
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 @{
     ViewData["Title"] = "Video";
     if (Model == null || Model.Genres == null)
@@ -121,7 +124,7 @@
                             </div>
                             <div class="comment-message comment_style">
                                 <div class="comment_time">
-                                    1 Апр 2022 в 2:55
+                                    @com.DataPublish
                                 </div>
                                 <div class="comment_text">
                                     @com.Content
@@ -146,23 +149,32 @@
                             </div>
                         </div>
                     }
-
-                    <div class="helper">
-                        Чтобы оставить комментарий
-
-                        <a asp-area="Identity" asp-page="/Account/Login" class="to_log"> войдите</a>
-                        или
-                        <a asp-area="Identity" asp-page="/Account/Register" class="to_log">зарегистрируйтесь</a>
-                        или оставьте так:
-                    </div>
-
+                    @if (!SignInManager.IsSignedIn(User))
+                    {
+                        <div class="helper">
+                            Чтобы оставить комментарий
+                            <a asp-area="Identity" asp-page="/Account/Login" class="to_log"> войдите</a>
+                            или
+                            <a asp-area="Identity" asp-page="/Account/Register" class="to_log">зарегистрируйтесь</a>
+                            или оставьте так:
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="helper">
+                            Оставьте комментарий:
+                        </div>
+                    }
                     <form class="video_form" method="post" action="">
                         <div>
                             <textarea class="comment_area" tabindex="1" type="text" name="text" id=> </textarea>
                         </div>
 
                         <div>
-                            <input class="input" tabindex="2" type="text" name="username" placeholder="Ваше имя" />
+                            @if (!SignInManager.IsSignedIn(User))
+                            {
+                                <input class="input" tabindex="2" type="text" name="username" placeholder="Ваше имя" />
+                            }
                             <input type="submit" value="Отправить" />
 
                         </div>

@@ -1,4 +1,5 @@
 ﻿#nullable disable
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RussianHub.Data;
@@ -12,10 +13,12 @@ namespace RussianHub.Controllers
     public class VideosController : Controller
     {
         private readonly RussianHubContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public VideosController(RussianHubContext context)
+        public VideosController(RussianHubContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Videos
@@ -160,14 +163,18 @@ namespace RussianHub.Controllers
             {
                 string str = HttpContext.Request.HttpContext.Request.Path.Value;
                 str = str.Substring(str.Length - "d2ae069c-a202-4a25-9618-267c2168c08b".Length);
-                video = Guid.Parse(str);  
+                video = Guid.Parse(str);
             }
             Comment comment = new Comment();
             comment.Content = Request.Form.FirstOrDefault(p => p.Key == "text").Value;
             comment.Id = Guid.NewGuid();
-            comment.Name = Request.Form.FirstOrDefault(p => p.Key == "username").Value;
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+                comment.Name = Request.Form.FirstOrDefault(p => p.Key == "username").Value;
+            else
+                comment.Name = user.UserName;
             //TODO если юзер авторизован, то в это иф не заходим
-            if (true)
+            if (user == null)
                 comment.Name += " (Гость)";
             comment.LinkPhotoProfile = null;
             comment.VideoId = video;

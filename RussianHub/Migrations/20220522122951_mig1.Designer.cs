@@ -9,11 +9,11 @@ using RussianHub.Data;
 
 #nullable disable
 
-namespace RussianHub.Migrations.Comment
+namespace RussianHub.Migrations
 {
     [DbContext(typeof(RussianHubContext))]
-    [Migration("20220515185736_Comment_M")]
-    partial class Comment_M
+    [Migration("20220522122951_mig1")]
+    partial class mig1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,35 @@ namespace RussianHub.Migrations.Comment
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("RussianHub.Models.Actor", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("CountVideos")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LinkPhoto")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameOnEnglish")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Actor");
+                });
 
             modelBuilder.Entity("RussianHub.Models.Comment", b =>
                 {

@@ -2,9 +2,9 @@
 
 #nullable disable
 
-namespace RussianHub.Migrations.Comment
+namespace RussianHub.Migrations
 {
-    public partial class Comment_M : Migration
+    public partial class mig1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
