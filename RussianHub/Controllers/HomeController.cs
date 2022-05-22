@@ -141,6 +141,9 @@ namespace RussianHub.Controllers
             {
                 return NotFound();
             }
+            video.CountViews++;
+            _context.Update(video);
+            await _context.SaveChangesAsync();
             return View(video);
         }
     }
