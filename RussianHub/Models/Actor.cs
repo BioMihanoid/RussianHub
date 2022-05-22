@@ -15,6 +15,10 @@ namespace RussianHub.Models
         [Required]
         [Display(Name = "Ссылка на фото модели")]
         public string? LinkPhoto { get; set; }
+        //TODO пофиксить этот ебанный костыль с гендером на норм класс и выпадающий список
+        [Required]
+        [Display(Name = "Пол модели")]
+        public string? Gender { get; set; }
         [Display(Name = "Дата добавления модели")]
         public DateTime? CreatedDate { get; set; } = DateTime.Now;
         [Display(Name = "Колличество видео с данной моделью")]

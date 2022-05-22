@@ -54,7 +54,7 @@ namespace RussianHub.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,NameOnEnglish,LinkPhoto")] Actor actor)
+        public async Task<IActionResult> Create([Bind("Id,Name,NameOnEnglish,LinkPhoto,Gender")] Actor actor)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace RussianHub.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,NameOnEnglish,LinkPhoto")] Actor actor)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,NameOnEnglish,LinkPhoto,Gender")] Actor actor)
         {
             if (id != actor.Id)
             {

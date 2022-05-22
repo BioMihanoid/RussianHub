@@ -67,7 +67,7 @@ namespace RussianHub.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Models(string searchModel)
+        public async Task<IActionResult> Models(string paramsForModel)
         {
             var videoList = await _context.Video.ToListAsync();
             var modelList = await _context.Actor.ToListAsync();
@@ -93,12 +93,28 @@ namespace RussianHub.Controllers
                     }
                 }
             }
-            if (searchModel == null)
+            if (paramsForModel == null || paramsForModel == "Female")
+            {
+                var res = from m in modelList
+                          where m.Gender.ToLower() == "female"
+                          select m;
+                return View(res);
+            }
+            else if (paramsForModel == "Male")
+            {
+                var res = from m in modelList
+                          where m.Gender.ToLower() == "male"
+                          select m;
+                return View(res);
+            }
+            else if (paramsForModel == "All")
+            {
                 return View(modelList);
+            }
             else
             {
                 var res = from m in modelList
-                          where m.Name.ToLower().Contains(searchModel.ToLower())
+                          where m.Name.ToLower().Contains(paramsForModel.ToLower())
                           select m;
                 return View(res);
             }

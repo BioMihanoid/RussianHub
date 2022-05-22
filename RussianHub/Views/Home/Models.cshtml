@@ -9,13 +9,13 @@
     <div class="div_sort">
         Пол:
         <div class="model_do_filter" id="sort_id_3">
-            Девушки
+            <a asp-controller="Home" asp-action="Models" asp-route-paramsForModel="Female">Женщины</a>
             <div class="hidden_sort_sex">
-                <div>
-                    Мужчины
+                <div >
+                    <a asp-controller="Home" asp-action="Models" asp-route-paramsForModel="Male">Мужчины</a>
                 </div>
                 <div>
-                    Все
+                    <a asp-controller="Home" asp-action="Models" asp-route-paramsForModel="All">Все</a>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
 <div style="display: inline-block">
     <form class="form" asp-controller="Home" asp-action="Models">
         <div class="text_area">
-            <input placeholder="Поиск модели" name="searchModel" />
+            <input placeholder="Поиск модели" name="paramsForModel" />
         </div>
         <div class="search">
             <input type="image" src="/Img/search3.png" style="width: 32px; height: 32px">
