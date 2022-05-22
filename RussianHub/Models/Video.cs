@@ -78,7 +78,7 @@ namespace RussianHub.Models
         {
             Comments = new List<Comment>();
         }
-        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual List<Comment> Comments { get; set; }
         //public string? Duration { get; set; }
         //public virtual ICollection<Comment> Comments { get; set; }
     }
