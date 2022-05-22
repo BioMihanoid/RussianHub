@@ -41,7 +41,7 @@ https://docs.microsoft.com/ru-ru/sql/ssms/download-sql-server-management-studio-
 - [ ] Add confirmation by email account
 - [ ] Make an admin panel only for admins
 - [ ] Add a rating
-- [ ] Add country and gender to models
+- [ ] Add country ~~and gender~~ to models
 - [ ] Make a section with a blog
 - [ ] Make a section with gifs
 - [ ] Make a table with photos
