@@ -30,11 +30,22 @@ namespace RussianHub.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Video>()
+                .HasMany(b => b.Comments)
+                .WithOne(p => p.Video);
+
             modelBuilder.Entity<Comment>()
                 .HasOne(p => p.Video)
                 .WithMany(b => b.Comments)
                 .HasForeignKey(p => p.VideoId);
-
+            
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Server=.;Database=RussianHub;Trusted_Connection=True;MultipleActiveResultSets=true");
+            }
         }
         public RussianHubContext (DbContextOptions<RussianHubContext> options)
             : base(options)

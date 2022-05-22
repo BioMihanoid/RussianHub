@@ -98,7 +98,6 @@ namespace RussianHub.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
             [Required(ErrorMessage = "You must be over 18 years old!")]
-            [Range(typeof(bool), "true", "true")]
             public bool Age { get; set; }
         }
 

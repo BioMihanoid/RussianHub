@@ -67,10 +67,10 @@ namespace RussianHub.Controllers
             return View();
         }
 
-        public IActionResult Models(string searchModel)
+        public async Task<IActionResult> Models(string searchModel)
         {
-            var videoList = _context.Video.ToList();
-            var modelList = _context.Actor.ToList();
+            var videoList = await _context.Video.ToListAsync();
+            var modelList = await _context.Actor.ToListAsync();
             foreach (var model in modelList)
             {
                 model.CountVideos = 0;
@@ -87,7 +87,7 @@ namespace RussianHub.Controllers
                             {
                                 model.CountVideos++;
                                 _context.Update(model);
-                                _context.SaveChanges();
+                                await _context.SaveChangesAsync();
                             }
                         }
                     }
@@ -129,20 +129,17 @@ namespace RussianHub.Controllers
             return View();
         }
 
-        public IActionResult Video(Guid id)
+        public async Task<IActionResult> Video(Guid id)
         {
-            var videoList = _context.Video.ToList();
-            Video video = new Video();
-            foreach (var obj in videoList)
+            if (id == null || _context.Video == null)
             {
-                if (obj.Id == id)
-                {
-                    obj.CountViews++;
-                    _context.Update(obj);
-                    _context.SaveChanges();
-                    video = obj;
-                    break;
-                }
+                return NotFound();
+            }
+
+            var video = await _context.Video.FindAsync(id);
+            if (video == null)
+            {
+                return NotFound();
             }
             return View(video);
         }
