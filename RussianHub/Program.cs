@@ -5,9 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<RussianHubContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("VideoContext") 
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection") 
         ?? throw new InvalidOperationException("Connection string 'VideoContext' not found.")));
 var config = builder.Configuration;
 

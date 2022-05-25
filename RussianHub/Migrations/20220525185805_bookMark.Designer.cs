@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RussianHub.Data;
 
@@ -11,9 +12,10 @@ using RussianHub.Data;
 namespace RussianHub.Migrations
 {
     [DbContext(typeof(RussianHubContext))]
-    partial class RussianHubContextModelSnapshot : ModelSnapshot
+    [Migration("20220525185805_bookMark")]
+    partial class bookMark
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +23,58 @@ namespace RussianHub.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("IdentityUser");
+                });
 
             modelBuilder.Entity("RussianHub.Models.Actor", b =>
                 {
@@ -61,12 +115,13 @@ namespace RussianHub.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("VideosId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("VideosId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("BookMark");
                 });
@@ -123,6 +178,9 @@ namespace RussianHub.Migrations
                     b.Property<string>("Actors")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("BookMarkId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("CountViews")
                         .HasColumnType("int");
 
@@ -153,18 +211,20 @@ namespace RussianHub.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BookMarkId");
+
                     b.ToTable("Video");
                 });
 
             modelBuilder.Entity("RussianHub.Models.BookMark", b =>
                 {
-                    b.HasOne("RussianHub.Models.Video", "Videos")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()
-                        .HasForeignKey("VideosId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Videos");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("RussianHub.Models.Comment", b =>
@@ -175,6 +235,18 @@ namespace RussianHub.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Video");
+                });
+
+            modelBuilder.Entity("RussianHub.Models.Video", b =>
+                {
+                    b.HasOne("RussianHub.Models.BookMark", null)
+                        .WithMany("Video")
+                        .HasForeignKey("BookMarkId");
+                });
+
+            modelBuilder.Entity("RussianHub.Models.BookMark", b =>
+                {
                     b.Navigation("Video");
                 });
 

@@ -12,10 +12,10 @@ namespace RussianHub.Controllers
     [Controller]
     public class VideosController : Controller
     {
-        private readonly RussianHubContext _context;
+        private readonly ApplicationDbContext _context;
         private readonly UserManager<IdentityUser> _userManager;
 
-        public VideosController(RussianHubContext context, UserManager<IdentityUser> userManager)
+        public VideosController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
             _userManager = userManager;

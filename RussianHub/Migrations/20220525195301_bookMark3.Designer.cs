@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RussianHub.Data;
 
@@ -11,9 +12,10 @@ using RussianHub.Data;
 namespace RussianHub.Migrations
 {
     [DbContext(typeof(RussianHubContext))]
-    partial class RussianHubContextModelSnapshot : ModelSnapshot
+    [Migration("20220525195301_bookMark3")]
+    partial class bookMark3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

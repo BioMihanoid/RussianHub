@@ -10,8 +10,8 @@ namespace RussianHub.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly RussianHubContext _context;
-        public HomeController(ILogger<HomeController> logger, RussianHubContext videoContext)
+        private readonly ApplicationDbContext _context;
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext videoContext)
         {
             _logger = logger;
             _context = videoContext;

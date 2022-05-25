@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RussianHub.Data;
 
@@ -11,9 +12,10 @@ using RussianHub.Data;
 namespace RussianHub.Migrations
 {
     [DbContext(typeof(RussianHubContext))]
-    partial class RussianHubContextModelSnapshot : ModelSnapshot
+    [Migration("20220523181038_userRole")]
+    partial class userRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,22 +57,6 @@ namespace RussianHub.Migrations
                     b.ToTable("Actor");
                 });
 
-            modelBuilder.Entity("RussianHub.Models.BookMark", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("VideosId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("VideosId");
-
-                    b.ToTable("BookMark");
-                });
-
             modelBuilder.Entity("RussianHub.Models.Comment", b =>
                 {
                     b.Property<Guid>("Id")
@@ -105,6 +91,10 @@ namespace RussianHub.Migrations
                 {
                     b.Property<string>("Login")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RoleType")
                         .HasColumnType("int");
@@ -154,17 +144,6 @@ namespace RussianHub.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Video");
-                });
-
-            modelBuilder.Entity("RussianHub.Models.BookMark", b =>
-                {
-                    b.HasOne("RussianHub.Models.Video", "Videos")
-                        .WithMany()
-                        .HasForeignKey("VideosId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Videos");
                 });
 
             modelBuilder.Entity("RussianHub.Models.Comment", b =>
