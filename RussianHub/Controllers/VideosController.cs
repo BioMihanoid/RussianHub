@@ -213,13 +213,6 @@ namespace RussianHub.Controllers
             return RedirectToAction("Video", "Videos", tVideo);
         }
 
-        public static void QwaTest(Comment video)
-        {
-
-            Console.WriteLine();
-            Console.WriteLine(video);
-        }
-
         public async Task<IActionResult> Video(Guid id) 
         {
             if (id == null || _context.Video == null)
