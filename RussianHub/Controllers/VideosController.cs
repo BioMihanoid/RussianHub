@@ -178,6 +178,8 @@ namespace RussianHub.Controllers
             _context.BookMark.Add(mark);
             await _context.SaveChangesAsync();
             var tVideo = await _context.Video.SingleAsync(p => p.Id == id);
+            tVideo.CountViews--;
+            _context.Update(tVideo);
             return RedirectToAction("Video", "Videos", tVideo);
         }
 
