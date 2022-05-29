@@ -154,17 +154,39 @@ namespace RussianHub.Controllers
             return _context.Video.Any(e => e.Id == id);
         }
 
-        [Route("Home/Video/{id?}")]
+
         [HttpPost]
-        public async Task<IActionResult> AddComment()
+        //[Route("Home/Video/{id?}", Name = "AddMark")]
+        //Route["{controller=Home}/{action=Index}/{id?}"]
+        public async Task<IActionResult> AddBookMark(Guid id)
         {
-            Console.WriteLine("\nTYT -" + HttpContext.Request.HttpContext.Request.Path.Value);
-            Guid video;
+            Guid video = id;
+            var user = await _userManager.GetUserAsync(User);
+            BookMark mark = await _context.BookMark.Include(p => p.User).FirstAsync(m => m.User.Id == user.Id);
+            
+            if (mark == null)
             {
-                string str = HttpContext.Request.HttpContext.Request.Path.Value;
-                str = str.Substring(str.Length - "d2ae069c-a202-4a25-9618-267c2168c08b".Length);
-                video = Guid.Parse(str);
+                mark = new BookMark();
             }
+            mark.MarkId = new Guid();
+            mark.User = user;
+            var val = await _context.Video.FindAsync(id);
+            if (mark.Videos == null)
+                mark.Videos = new List<Video>();
+            mark.Videos.Add(val);
+           
+            _context.BookMark.Add(mark);
+            await _context.SaveChangesAsync();
+            var tVideo = await _context.Video.SingleAsync(p => p.Id == id);
+            return RedirectToAction("Video", "Videos", tVideo);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> AddComment(Guid id)
+        {
+            //Console.WriteLine("\nTYT -" + HttpContext.Request.HttpContext.Request.Path.Value);
+            Guid video = id;
             Comment comment = new Comment();
             comment.DataPublish = DateTime.Now;
             comment.Content = Request.Form.FirstOrDefault(p => p.Key == "text").Value;
@@ -185,7 +207,8 @@ namespace RussianHub.Controllers
             tVideo.CountViews--;
             _context.Update(tVideo);
             await _context.SaveChangesAsync();
-            return RedirectToAction();
+            //return Redirect("https://localhost:7052/Videos/Video/"+id);
+            return RedirectToAction("Video", "Videos", tVideo);
         }
 
         public static void QwaTest(Comment video)
@@ -193,6 +216,24 @@ namespace RussianHub.Controllers
 
             Console.WriteLine();
             Console.WriteLine(video);
+        }
+
+        public async Task<IActionResult> Video(Guid id) 
+        {
+            if (id == null || _context.Video == null)
+            {
+                return NotFound();
+            }
+
+            var video = await _context.Video.Include(p => p.Comments).Include(p => p.bookMarks).SingleAsync(p => p.Id == id);
+            if (video == null)
+            {
+                return NotFound();
+            }
+            video.CountViews++;
+            _context.Update(video);
+            await _context.SaveChangesAsync();
+            return View(video);
         }
     }
 }

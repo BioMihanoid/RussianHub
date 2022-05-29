@@ -55,7 +55,7 @@
     @foreach (var obj in Model)
     {
         <div class="video_block">
-            <a asp-controller="Home" asp-action="Video" asp-route-id="@obj.Id">
+            <a asp-controller="Videos" asp-action="Video" asp-route-id="@obj.Id">
                 <img class="video_img" src="@obj.LinkPreview" />
                 <div class="about_video">
                     @obj.Name

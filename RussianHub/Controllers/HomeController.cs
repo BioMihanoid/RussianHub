@@ -164,22 +164,6 @@ namespace RussianHub.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Video(Guid id)
-        {
-            if (id == null || _context.Video == null)
-            {
-                return NotFound();
-            }
-
-            var video = await _context.Video.Include(p => p.Comments).SingleAsync(p => p.Id == id);
-            if (video == null)
-            {
-                return NotFound();
-            }
-            video.CountViews++;
-            _context.Update(video);
-            await _context.SaveChangesAsync();
-            return View(video);
-        }
+       
     }
 }

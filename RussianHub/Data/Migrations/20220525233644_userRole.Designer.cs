@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RussianHub.Data;
 
@@ -11,9 +12,10 @@ using RussianHub.Data;
 namespace RussianHub.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220525233644_userRole")]
+    partial class userRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,21 +23,6 @@ namespace RussianHub.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("BookMarkVideo", b =>
-                {
-                    b.Property<Guid>("VideosId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("bookMarksMarkId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("VideosId", "bookMarksMarkId");
-
-                    b.HasIndex("bookMarksMarkId");
-
-                    b.ToTable("BookMarkVideo");
-                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -346,6 +333,9 @@ namespace RussianHub.Data.Migrations
                     b.Property<string>("Actors")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("BookMarkMarkId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<int>("CountViews")
                         .HasColumnType("int");
 
@@ -376,22 +366,9 @@ namespace RussianHub.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BookMarkMarkId");
+
                     b.ToTable("Video");
-                });
-
-            modelBuilder.Entity("BookMarkVideo", b =>
-                {
-                    b.HasOne("RussianHub.Models.Video", null)
-                        .WithMany()
-                        .HasForeignKey("VideosId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("RussianHub.Models.BookMark", null)
-                        .WithMany()
-                        .HasForeignKey("bookMarksMarkId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -472,6 +449,18 @@ namespace RussianHub.Data.Migrations
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("RussianHub.Models.Video", b =>
+                {
+                    b.HasOne("RussianHub.Models.BookMark", null)
+                        .WithMany("Videos")
+                        .HasForeignKey("BookMarkMarkId");
+                });
+
+            modelBuilder.Entity("RussianHub.Models.BookMark", b =>
+                {
+                    b.Navigation("Videos");
                 });
 
             modelBuilder.Entity("RussianHub.Models.Video", b =>

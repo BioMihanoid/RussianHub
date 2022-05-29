@@ -12,7 +12,6 @@
         actor = Model.Actors.Split('/');
     int i;
 }
-
 <head>
     <meta charset="utf-8" />
     <title>Embedded Video Example</title>
@@ -35,10 +34,12 @@
 
                     <div class="video_favs">
                         <div class="video_likes">
-                            999
+                            @Model.bookMarks.Count
                         </div>
                         <div class="add_favorite">
-                            <img src="/img/like_fav.png" height="30px" width="32px" />
+                            <form method="post">
+                            <input asp-controller="Videos" asp-action="AddBookMark" asp-route-id="@Model.Id" type="image" src="/img/like_fav.png" height="30px" width="32px" />
+                            </form>
                         </div>
                     </div>
 
@@ -165,7 +166,7 @@
                             Оставьте комментарий:
                         </div>
                     }
-                    <form class="video_form" method="post" action="">
+                    <form asp-controller="Videos" asp-action="AddComment" asp-route-id="@Model.Id" method="post">
                         <div>
                             <textarea class="comment_area" tabindex="1" type="text" name="text" id=> </textarea>
                         </div>

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace RussianHub.Models
 {
@@ -11,9 +12,9 @@ namespace RussianHub.Models
     public class UserRole
     {
         
-
         [Key,Required]
-        public string Login { get; set; }
+        public Guid Id { get; set; }
+        public IdentityUser User { get; set; }
 
         [Required]
         public RoleTypes RoleType { get; set; }
