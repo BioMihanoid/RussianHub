@@ -162,8 +162,17 @@ namespace RussianHub.Controllers
         {
             Guid video = id;
             var user = await _userManager.GetUserAsync(User);
-            BookMark mark = await _context.BookMark.Include(p => p.User).FirstAsync(m => m.User.Id == user.Id);
-            
+            BookMark mark;
+            try
+            {
+                mark = await _context.BookMark.Include(p => p.User).FirstAsync(m => m.User.Id == user.Id);
+
+            } catch (Exception ex)
+            {
+                mark = null;
+            }
+
+
             if (mark == null)
             {
                 mark = new BookMark();

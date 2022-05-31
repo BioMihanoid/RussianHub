@@ -38,8 +38,17 @@
                         </div>
                         <div class="add_favorite">
                             <form method="post">
-                            <input asp-controller="Videos" asp-action="AddBookMark" asp-route-id="@Model.Id" type="image" src="/img/like_fav.png" height="30px" width="32px" />
-                            </form>
+                    @if (!SignInManager.IsSignedIn(User))
+                    {
+                      <input type="image" src="/img/like_fav.png" height="30px" width="32px" />
+                        
+                    }
+                    else
+                    {
+                        <input asp-controller="Videos" asp-action="AddBookMark" asp-route-id="@Model.Id" type="image" src="/img/like_fav.png" height="30px" width="32px" />
+                            
+                    }
+                           </form>
                         </div>
                     </div>
 
