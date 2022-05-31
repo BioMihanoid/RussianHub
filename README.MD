@@ -13,12 +13,12 @@ The startup algorithm is something like this (if you are working in the console)
 ```
 git clone https://github.com/BioMihanoid/RussianHub
 cd  RussianHub
-update-database -context RussianHubContext
+update-database
 dotnet run
 ```
 Or you can open Visual Studio 2022/Rider, choose there that you want to work with the project from github, insert this link there https://github.com/BioMihanoid/RussianHub , apply the following migrations to the package manager console and run the project.
 ```
-update-database -context RussianHubContext
+update-database
 ```
 
 P.S. I didn't write about migration for the user above, but when you create the page itself will offer to apply it, agree and then everything will work for you. In order to fully enjoy the work of the site, you need to register a user and log in to his account. After you log in, you will have access to the admin panel, where you can fill the site with content and see its functionality after.
@@ -43,10 +43,9 @@ https://docs.microsoft.com/ru-ru/sql/ssms/download-sql-server-management-studio-
 - [ ] Add a rating
 - [ ] Add country ~~and gender~~ to models
 - [ ] Make a section with a blog
-- [ ] Make a section with gifs
-- [ ] Make a table with photos
+- [X] ~~Make a section with gifs~~
+- [X] ~~Make a table with photos~~
 - [ ] Make a feedback form
-- [ ] Solve the problem with the duration of the video
 - [ ] Add all sorts of videos by rating and dates
 - [ ] Write all sorts of models
 
