@@ -72,6 +72,7 @@ a, a:visited {
         text-decoration: none;
     }
 
+
 ul li {
     list-style: none;
 }
@@ -297,7 +298,7 @@ h1 {
         text-decoration: underline;
     }
 
-.video_img { /*  */
+.video_img {
     width: 100%;
 }
 
@@ -439,6 +440,7 @@ h1 {
         background-color: #fe209f;
         cursor: pointer;
     }
+   
 
 .Category {
     padding-right: 5px;
