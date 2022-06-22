@@ -440,13 +440,6 @@ h1 {
         cursor: pointer;
     }
 
-.content-container > content-item > photo_block {
-}
-
-
-
-
-
 .Category {
     padding-right: 5px;
     font-family: Arial, Helvetica, sans-serif;
@@ -1062,11 +1055,11 @@ input {
             border-bottom: 1px solid #f4792e;
         }
 
-    .main_container { /*????*/
+    .main_container {
         position: relative;
     }
 
-    header { /*????*/
+    header {
         position: relative;
     }
 
@@ -1131,7 +1124,7 @@ input {
 
 
 
-    .content-container { /*Лишнее*/
+    .content-container {
         border-top: none;
         padding: 0;
         width: 100%;
